@@ -11,7 +11,7 @@ const prevBtn = document.getElementById('prevBtn');
 const changeLink = document.getElementById('changeTopicsLink');
 
 // Fetch flashcards from API
-fetch('http://localhost:3000/flashcards')
+fetch('https://sdet-flashcards-api.onrender.com/flashcards')
   .then(response => response.json())
   .then(data => {
     allFlashcards = data;
