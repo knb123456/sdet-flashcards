@@ -27,8 +27,11 @@ app.use(['/flashcards', '/flashcards/:id', '/admin.html'], (req, res, next) => {
   });
 
 
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: 'https://knb123456.github.io'
+  }));
+  
 
 // SQLite setup
 const db = new sqlite3.Database('./flashcards.db', (err) => {
