@@ -1,4 +1,17 @@
 Question,Answer
-What is Selenium?,A browser automation tool
-What is a test case?,A set of conditions to verify software behavior
-What is an assertion?,A statement that verifies a condition in a test
+What is Playwright?,An open-source framework for end-to-end testing of web applications.
+Which languages does Playwright support?,JavaScript, TypeScript, Python, C#, Java.
+How do you navigate to a URL in Playwright?,Use `await page.goto('https://example.com')`.
+How do you take a screenshot in Playwright?,Use `await page.screenshot({ path: 'screenshot.png' })`.
+How do you select an element by text in Playwright?,Use `page.getByText('text')`.
+How do you select an element by CSS selector in Playwright?,Use `page.locator('css-selector')`.
+What is the difference between `page.locator` and `page.getByText`?,`locator` is for CSS/element selection; `getByText` finds by text content.
+How do you run Playwright tests in headless mode?,By default, Playwright runs in headless mode; to run with UI, use `headless: false` in launch options.
+How do you record a test in Playwright?,Run `npx playwright codegen <url>`.
+How do you handle alerts or popups in Playwright?,Use `page.on('dialog', async dialog => { await dialog.accept(); })`.
+How do you wait for an element to appear in Playwright?,Use `await page.waitForSelector('selector')`.
+How do you emulate a mobile device in Playwright?,Use `playwright.devices['iPhone 11']` with browser context.
+What are Playwright fixtures?,Reusable objects in Playwright Test to share setup and teardown logic.
+What command installs Playwright?,`npm install @playwright/test`.
+How do you execute Playwright tests?,Use `npx playwright test`.
+What is the difference between Playwright and Selenium?,Playwright is faster, has auto-waiting, and better modern web support; Selenium has broader ecosystem but can be slower.
