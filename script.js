@@ -119,6 +119,7 @@ document.getElementById('prevBtn').addEventListener('click', function () {
 });
 
 // Change Topics link
-document.getElementById('changeTopicsLink').addEventListener('click', function () {
+document.getElementById('changeTopicsLink').addEventListener('click', function (e) {
+  e.preventDefault(); // Prevent link from refreshing page
   document.getElementById('topicSelection').style.display = 'block';
 });

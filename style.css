@@ -32,6 +32,15 @@ button:hover {
   background-color: #0056b3;
 }
 
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   body {
@@ -52,5 +61,9 @@ button:hover {
 
   button:hover {
     background-color: #555;
+  }
+
+  a {
+    color: #66b2ff;
   }
 }
