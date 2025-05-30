@@ -1,15 +1,20 @@
+/* Base styles (light mode defaults) */
 body {
   font-family: sans-serif;
   text-align: center;
   margin: 2rem;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .card {
   border: 1px solid #ccc;
+  background-color: #f9f9f9;
   padding: 1rem;
   margin: 1rem auto;
   border-radius: 8px;
   max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -20,8 +25,32 @@ button {
   cursor: pointer;
   background-color: #007bff;
   color: white;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+
+  button {
+    background-color: #333;
+    color: white;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
 }
