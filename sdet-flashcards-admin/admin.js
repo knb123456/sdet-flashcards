@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/flashcards';
+const apiUrl = 'https://sdet-flashcards-api.onrender.com/flashcards';
 
 // Load flashcards on page load
 loadFlashcards();
