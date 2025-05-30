@@ -20,17 +20,15 @@ function adminAuth(req, res, next) {
     }
   }
 
+// Apply auth to admin routes
+app.use(['/flashcards', '/flashcards/:id', '/admin.html'], (req, res, next) => {
+    if (req.method === 'GET' && req.path === '/flashcards') return next(); // Allow public access for study mode
+    adminAuth(req, res, next);
+  });
+
+
 app.use(cors());
 app.use(express.json());
-
-// Apply auth only to admin routes
-app.use(['/flashcards', '/flashcards/:id'], (req, res, next) => {
-  if (req.method === 'GET') return next(); // Allow study mode (GET) without auth
-  adminAuth(req, res, next);
-});
-
-
-
 
 // SQLite setup
 const db = new sqlite3.Database('./flashcards.db', (err) => {

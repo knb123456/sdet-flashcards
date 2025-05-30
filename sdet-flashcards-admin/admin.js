@@ -1,11 +1,19 @@
 const apiUrl = 'https://sdet-flashcards-api.onrender.com/flashcards';
 
+// Prompt for Basic Auth credentials
+const username = prompt('Enter admin username:');
+const password = prompt('Enter admin password:');
+const authHeader = 'Basic ' + btoa(username + ':' + password);
+
 // Load flashcards on page load
 loadFlashcards();
 
 function loadFlashcards() {
-  fetch(apiUrl)
-    .then(response => response.json())
+  fetch(apiUrl, { headers: { Authorization: authHeader } })
+    .then(response => {
+      if (!response.ok) throw new Error('Unauthorized or network error');
+      return response.json();
+    })
     .then(data => {
       const tbody = document.getElementById('flashcardTableBody');
       tbody.innerHTML = '';
@@ -25,6 +33,9 @@ function loadFlashcards() {
 
         tbody.appendChild(row);
       });
+    })
+    .catch(err => {
+      alert('Error: ' + err.message);
     });
 }
 
@@ -37,9 +48,13 @@ document.getElementById('addForm').addEventListener('submit', e => {
 
   fetch(apiUrl, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: authHeader
+    },
     body: JSON.stringify({ topic, question, answer })
-  }).then(() => {
+  }).then(response => {
+    if (!response.ok) return alert('Add failed. Check credentials.');
     document.getElementById('addForm').reset();
     loadFlashcards();
   });
@@ -55,9 +70,15 @@ function updateCard(id) {
 
   fetch(`${apiUrl}/${id}`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: authHeader
+    },
     body: JSON.stringify(updated)
-  }).then(loadFlashcards);
+  }).then(response => {
+    if (!response.ok) return alert('Update failed. Check credentials.');
+    loadFlashcards();
+  });
 }
 
 // Delete flashcard
@@ -65,6 +86,10 @@ function deleteCard(id) {
   if (!confirm('Are you sure you want to delete this flashcard?')) return;
 
   fetch(`${apiUrl}/${id}`, {
-    method: 'DELETE'
-  }).then(loadFlashcards);
+    method: 'DELETE',
+    headers: { Authorization: authHeader }
+  }).then(response => {
+    if (!response.ok) return alert('Delete failed. Check credentials.');
+    loadFlashcards();
+  });
 }
