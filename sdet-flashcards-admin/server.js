@@ -1,23 +1,24 @@
-// server.js
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const app = express();
 const port = 3000;
 const auth = require('basic-auth');
+require('dotenv').config();
+
 
 function adminAuth(req, res, next) {
-  const user = auth(req);
-  const username = 'admin';   // Set your username
-  const password = 'password'; // Set your password
-
-  if (user && user.name === username && user.pass === password) {
-    next();
-  } else {
-    res.set('WWW-Authenticate', 'Basic realm="Flashcards Admin"');
-    res.status(401).send('Authentication required.');
+    const user = auth(req);
+    const username = process.env.ADMIN_USERNAME;
+    const password = process.env.ADMIN_PASSWORD;
+  
+    if (user && user.name === username && user.pass === password) {
+      next();
+    } else {
+      res.set('WWW-Authenticate', 'Basic realm="Flashcards Admin"');
+      res.status(401).send('Authentication required.');
+    }
   }
-}
 
 app.use(cors());
 app.use(express.json());
