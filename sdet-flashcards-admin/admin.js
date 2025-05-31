@@ -85,7 +85,7 @@ function updateCard(id) {
 
 // Delete flashcard
 function deleteCard(id) {
-  if (!confirm('Are you sure you want to delete this flashcard?')) return;
+  //if (!confirm('Are you sure you want to delete this flashcard?')) return;
 
   fetch(`${apiUrl}/${id}`, {
     method: 'DELETE'
