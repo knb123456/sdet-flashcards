@@ -5,11 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SDET Flashcards Admin</title>
   <style>
-    body { font-family: sans-serif; margin: 2rem; }
-    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
-    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
-    input, button { margin: 0.2rem; }
-    .actions { white-space: nowrap; }
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    td input[type="text"] {
+      width: 95%;
+      padding: 0.3rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    td textarea {
+      width: 95%;
+      padding: 0.3rem;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      min-height: 60px;
+    }
+
+    .actions {
+      white-space: nowrap;
+    }
+
+    input, button {
+      margin: 0.2rem;
+    }
+
+    form input[type="text"] {
+      width: 200px;
+    }
+
+    form textarea {
+      width: 300px;
+      min-height: 60px;
+    }
+
+    button {
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -19,7 +69,7 @@
   <form id="addForm">
     <input type="text" id="addTopic" placeholder="Topic" required />
     <input type="text" id="addQuestion" placeholder="Question" required />
-    <input type="text" id="addAnswer" placeholder="Answer" required />
+    <textarea id="addAnswer" placeholder="Answer" required></textarea>
     <button type="submit">Add</button>
   </form>
 

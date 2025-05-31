@@ -22,9 +22,9 @@ function loadFlashcards() {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-          <td><input value="${card.topic}" data-id="${card.id}" data-field="topic"></td>
-          <td><input value="${card.question}" data-id="${card.id}" data-field="question"></td>
-          <td><input value="${card.answer}" data-id="${card.id}" data-field="answer"></td>
+          <td><input type="text" value="${card.topic}" data-id="${card.id}" data-field="topic"></td>
+          <td><textarea data-id="${card.id}" data-field="question">${card.question}</textarea></td>
+          <td><textarea data-id="${card.id}" data-field="answer">${card.answer}</textarea></td>
           <td class="actions">
             <button onclick="updateCard(${card.id})">Update</button>
             <button onclick="deleteCard(${card.id})">Delete</button>
@@ -62,7 +62,7 @@ document.getElementById('addForm').addEventListener('submit', e => {
 
 // Update flashcard
 function updateCard(id) {
-  const inputs = document.querySelectorAll(`input[data-id='${id}']`);
+  const inputs = document.querySelectorAll(`[data-id='${id}']`);
   const updated = {};
   inputs.forEach(input => {
     updated[input.dataset.field] = input.value;
