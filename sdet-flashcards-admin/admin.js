@@ -1,4 +1,4 @@
-const apiUrl = 'https://your-render-url.onrender.com/flashcards'; // Replace with your backend URL
+const apiUrl = 'https://sdet-flashcards-api.onrender.com/flashcards'; // Replace with your backend URL
 
 // Load flashcards on page load
 loadFlashcards();
