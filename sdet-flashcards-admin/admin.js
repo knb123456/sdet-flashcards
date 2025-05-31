@@ -1,10 +1,17 @@
 const apiUrl = 'https://sdet-flashcards-api.onrender.com/flashcards'; // Replace with your backend URL
 
+// Prompt for admin username/password (commented out)
+// const username = prompt('Enter admin username:');
+// const password = prompt('Enter admin password:');
+// const authHeader = 'Basic ' + btoa(username + ':' + password);
+
 // Load flashcards on page load
 loadFlashcards();
 
 function loadFlashcards() {
-  fetch(apiUrl)
+  fetch(apiUrl
+    // , { headers: { Authorization: authHeader } }
+  )
     .then(response => {
       if (!response.ok) throw new Error('Error loading flashcards');
       return response.json();
@@ -34,30 +41,22 @@ function loadFlashcards() {
     });
 }
 
-// Prompt for credentials and return Authorization header
-function getAuthHeader() {
-  const username = prompt('Enter admin username:');
-  const password = prompt('Enter admin password:');
-  return 'Basic ' + btoa(username + ':' + password);
-}
-
 // Add flashcard
 document.getElementById('addForm').addEventListener('submit', e => {
   e.preventDefault();
   const topic = document.getElementById('addTopic').value.trim();
   const question = document.getElementById('addQuestion').value.trim();
   const answer = document.getElementById('addAnswer').value.trim();
-  const authHeader = getAuthHeader();
 
   fetch(apiUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: authHeader
+      'Content-Type': 'application/json'
+      // , Authorization: authHeader
     },
     body: JSON.stringify({ topic, question, answer })
   }).then(response => {
-    if (!response.ok) return alert('Add failed. Check credentials.');
+    if (!response.ok) return alert('Add failed.');
     document.getElementById('addForm').reset();
     loadFlashcards();
   });
@@ -70,17 +69,16 @@ function updateCard(id) {
   inputs.forEach(input => {
     updated[input.dataset.field] = input.value;
   });
-  const authHeader = getAuthHeader();
 
   fetch(`${apiUrl}/${id}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: authHeader
+      'Content-Type': 'application/json'
+      // , Authorization: authHeader
     },
     body: JSON.stringify(updated)
   }).then(response => {
-    if (!response.ok) return alert('Update failed. Check credentials.');
+    if (!response.ok) return alert('Update failed.');
     loadFlashcards();
   });
 }
@@ -88,13 +86,12 @@ function updateCard(id) {
 // Delete flashcard
 function deleteCard(id) {
   if (!confirm('Are you sure you want to delete this flashcard?')) return;
-  const authHeader = getAuthHeader();
 
   fetch(`${apiUrl}/${id}`, {
-    method: 'DELETE',
-    headers: { Authorization: authHeader }
+    method: 'DELETE'
+    // , headers: { Authorization: authHeader }
   }).then(response => {
-    if (!response.ok) return alert('Delete failed. Check credentials.');
+    if (!response.ok) return alert('Delete failed.');
     loadFlashcards();
   });
 }
