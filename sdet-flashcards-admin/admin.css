@@ -1,0 +1,71 @@
+/* Base styles */
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  td input[type="text"], td textarea {
+    width: 95%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 40px;
+  }
+  
+  td textarea {
+    min-height: 60px;
+  }
+  
+  .actions {
+    white-space: nowrap;
+  }
+  
+  input, button {
+    margin: 0.2rem;
+  }
+  
+  form input[type="text"], form textarea {
+    width: 250px;
+  }
+  
+  form textarea {
+    min-height: 60px;
+  }
+  
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+  
+  /* Light mode */
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --border: #ccc;
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --text: #eee;
+      --border: #444;
+    }
+  }
+  
