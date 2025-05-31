@@ -1,37 +1,17 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
-const app = express();
-const port = 3000;
+const path = require('path');
 const auth = require('basic-auth');
-require('dotenv').config();
+require('dotenv').config(); // Optional, for local testing with .env
 
-
-function adminAuth(req, res, next) {
-    const user = auth(req);
-    const username = process.env.ADMIN_USERNAME;
-    const password = process.env.ADMIN_PASSWORD;
-  
-    if (user && user.name === username && user.pass === password) {
-      next();
-    } else {
-      res.set('WWW-Authenticate', 'Basic realm="Flashcards Admin"');
-      res.status(401).send('Authentication required.');
-    }
-  }
-
-// Apply auth to admin routes
-app.use(['/flashcards', '/flashcards/:id', '/admin.html'], (req, res, next) => {
-    if (req.method === 'GET' && req.path === '/flashcards') return next(); // Allow public access for study mode
-    adminAuth(req, res, next);
-  });
-
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://knb123456.github.io'
-  }));
-  
+  origin: 'https://knb123456.github.io' // Replace with your actual GitHub Pages URL
+}));
 
 // SQLite setup
 const db = new sqlite3.Database('./flashcards.db', (err) => {
@@ -50,9 +30,35 @@ db.serialize(() => {
   `);
 });
 
-// Routes
+// Authentication middleware
+function adminAuth(req, res, next) {
+  const user = auth(req);
+  const username = process.env.ADMIN_USERNAME;
+  const password = process.env.ADMIN_PASSWORD;
 
-// Get all flashcards
+  if (req.method === 'GET' && req.path === '/flashcards') {
+    return next(); // Allow public access for study mode
+  }
+
+  if (user && user.name === username && user.pass === password) {
+    next();
+  } else {
+    res.set('WWW-Authenticate', 'Basic realm="Flashcards Admin"');
+    res.status(401).send('Authentication required.');
+  }
+}
+
+// Apply auth middleware globally
+app.use(adminAuth);
+
+// Serve admin.html (protected)
+app.get('/admin.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+// Flashcards API routes
+
+// Get all flashcards (public for study mode)
 app.get('/flashcards', (req, res) => {
   db.all('SELECT * FROM flashcards', [], (err, rows) => {
     if (err) res.status(500).json({ error: err.message });
@@ -60,7 +66,7 @@ app.get('/flashcards', (req, res) => {
   });
 });
 
-// Add a flashcard
+// Add a flashcard (admin only)
 app.post('/flashcards', (req, res) => {
   const { topic, question, answer } = req.body;
   db.run(
@@ -73,7 +79,7 @@ app.post('/flashcards', (req, res) => {
   );
 });
 
-// Update a flashcard
+// Update a flashcard (admin only)
 app.put('/flashcards/:id', (req, res) => {
   const { topic, question, answer } = req.body;
   const { id } = req.params;
@@ -87,7 +93,7 @@ app.put('/flashcards/:id', (req, res) => {
   );
 });
 
-// Delete a flashcard
+// Delete a flashcard (admin only)
 app.delete('/flashcards/:id', (req, res) => {
   const { id } = req.params;
   db.run('DELETE FROM flashcards WHERE id = ?', id, function (err) {
