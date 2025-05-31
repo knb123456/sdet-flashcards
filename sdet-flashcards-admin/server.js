@@ -2,15 +2,15 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const path = require('path');
-const auth = require('basic-auth');
-require('dotenv').config(); // Optional, for local testing with .env
+// const auth = require('basic-auth'); // Commented out for now
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://knb123456.github.io' // Replace with your actual GitHub Pages URL
+  origin: 'https://knb123456.github.io' // Your frontend URL
 }));
 
 // SQLite setup
@@ -30,7 +30,8 @@ db.serialize(() => {
   `);
 });
 
-// Authentication middleware
+// Authentication middleware (commented out)
+/*
 function adminAuth(req, res, next) {
   const user = auth(req);
   const username = process.env.ADMIN_USERNAME;
@@ -48,10 +49,10 @@ function adminAuth(req, res, next) {
   }
 }
 
-// Apply auth middleware globally
-app.use(adminAuth);
+// app.use(adminAuth); // Apply auth middleware globally
+*/
 
-// Serve admin.html (protected)
+// Serve admin.html (currently unprotected)
 app.get('/admin.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'admin.html'));
 });
@@ -66,7 +67,7 @@ app.get('/flashcards', (req, res) => {
   });
 });
 
-// Add a flashcard (admin only)
+// Add a flashcard (currently unprotected)
 app.post('/flashcards', (req, res) => {
   const { topic, question, answer } = req.body;
   db.run(
@@ -79,7 +80,7 @@ app.post('/flashcards', (req, res) => {
   );
 });
 
-// Update a flashcard (admin only)
+// Update a flashcard (currently unprotected)
 app.put('/flashcards/:id', (req, res) => {
   const { topic, question, answer } = req.body;
   const { id } = req.params;
@@ -93,7 +94,7 @@ app.put('/flashcards/:id', (req, res) => {
   );
 });
 
-// Delete a flashcard (admin only)
+// Delete a flashcard (currently unprotected)
 app.delete('/flashcards/:id', (req, res) => {
   const { id } = req.params;
   db.run('DELETE FROM flashcards WHERE id = ?', id, function (err) {
