@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SDET Flashcards Admin</title>
-        <link rel="stylesheet" href="admin.css">
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDET Flashcards Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
 <body>
   <h1>SDET Flashcards Admin</h1>
+  <div class="header-link">
+    <a href="https://knb123456.github.io/sdet-flashcards/index.html">&larr; Back to Flashcards</a>
+  </div>
 
   <h2>Add Flashcard</h2>
   <form id="addForm">
     <input type="text" id="addTopic" placeholder="Topic" required />
-    <input type="text" id="addQuestion" placeholder="Question" required />
+    <textarea id="addQuestion" placeholder="Question" required></textarea>
     <textarea id="addAnswer" placeholder="Answer" required></textarea>
-    <button type="submit">Add</button>
+    <button type="submit">Add Flashcard</button>
   </form>
 
+  <div class="csv-buttons">
+    <button id="downloadCsvBtn">Download CSV</button>
+    <input type="file" id="uploadCsvInput" accept=".csv" />
+  </div>
+
   <h2>Manage Flashcards</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Topic</th>
-        <th>Question</th>
-        <th>Answer</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="flashcardTableBody"></tbody>
-  </table>
+  <div id="flashcardsContainer"></div>
 
   <script src="admin.js"></script>
 </body>
