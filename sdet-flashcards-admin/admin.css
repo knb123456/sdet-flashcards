@@ -39,7 +39,8 @@ input, textarea, button {
 
 textarea {
   font-size: 0.9rem;
-  height: 3rem;
+  height: 2rem; /* Reduced height */
+  line-height: 1.2; /* Tighter spacing */
   resize: vertical;
 }
 
@@ -52,8 +53,13 @@ textarea {
 
 .topic-header {
   font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  margin: 0.75rem 0;
+  padding: 0.5rem;
+  background: #007aff;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
 }
 
 .card-row {
@@ -67,6 +73,8 @@ textarea {
   width: 100%;
   font-size: 0.9rem;
   padding: 0.4rem;
+  height: 2rem; /* Adjusted height */
+  line-height: 1.2;
 }
 
 .actions {
@@ -86,6 +94,6 @@ textarea {
     font-size: 0.9rem;
   }
   textarea {
-    height: 2.5rem;
+    height: 2rem; /* Consistent on mobile */
   }
 }
