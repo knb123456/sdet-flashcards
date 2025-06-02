@@ -1,22 +1,18 @@
 const apiUrl = 'https://sdet-flashcards-api.onrender.com/flashcards'; // Replace with your backend URL
 
-// Prompt for admin username/password (commented out)
-// const username = prompt('Enter admin username:');
-// const password = prompt('Enter admin password:');
-// const authHeader = 'Basic ' + btoa(username + ':' + password);
-
 // Load flashcards on page load
 loadFlashcards();
 
 function loadFlashcards() {
-  fetch(apiUrl
-    // , { headers: { Authorization: authHeader } }
-  )
+  fetch(apiUrl)
     .then(response => {
       if (!response.ok) throw new Error('Error loading flashcards');
       return response.json();
     })
     .then(data => {
+      // Sort by topic alphabetically
+      data.sort((a, b) => a.topic.localeCompare(b.topic));
+
       const container = document.getElementById('flashcardsContainer');
       container.innerHTML = '';
 
@@ -87,10 +83,7 @@ document.getElementById('addForm').addEventListener('submit', e => {
 
   fetch(apiUrl, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-      // , Authorization: authHeader
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ topic, question, answer })
   }).then(response => {
     if (!response.ok) return alert('Add failed.');
@@ -109,10 +102,7 @@ function updateCard(id) {
 
   fetch(`${apiUrl}/${id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-      // , Authorization: authHeader
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updated)
   }).then(response => {
     if (!response.ok) return alert('Update failed.');
@@ -122,11 +112,8 @@ function updateCard(id) {
 
 // Delete flashcard
 function deleteCard(id) {
-  // if (!confirm('Are you sure you want to delete this flashcard?')) return;
-
   fetch(`${apiUrl}/${id}`, {
     method: 'DELETE'
-    // , headers: { Authorization: authHeader }
   }).then(response => {
     if (!response.ok) return alert('Delete failed.');
     loadFlashcards();
@@ -138,6 +125,9 @@ document.getElementById('downloadCsvBtn').addEventListener('click', () => {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
+      // Sort alphabetically by topic
+      data.sort((a, b) => a.topic.localeCompare(b.topic));
+
       let csv = 'Topic,Question,Answer\n';
       data.forEach(card => {
         csv += `"${card.topic}","${card.question.replace(/"/g, '""')}","${card.answer.replace(/"/g, '""')}"\n`;
@@ -152,27 +142,58 @@ document.getElementById('downloadCsvBtn').addEventListener('click', () => {
     });
 });
 
-// Upload CSV
+// Upload CSV (clear DB first, then add new data)
 document.getElementById('uploadCsvInput').addEventListener('change', e => {
   const file = e.target.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = function(event) {
     const lines = event.target.result.split('\n').slice(1); // skip header
-    const promises = lines.map(line => {
-      const [topic, question, answer] = line.split(',').map(s => s?.replace(/"/g, '').trim());
-      if (topic && question && answer) {
-        return fetch(apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ topic, question, answer })
-        });
-      }
-    });
-    Promise.all(promises).then(() => {
-      alert('CSV upload complete.');
-      loadFlashcards();
-    });
+    const flashcards = lines
+      .map(line => {
+        const [topic, question, answer] = line.split(',').map(s => s?.replace(/"/g, '').trim());
+        if (topic && question && answer) {
+          return { topic, question, answer };
+        }
+        return null;
+      })
+      .filter(item => item !== null);
+
+    if (flashcards.length === 0) {
+      alert('No valid flashcards found in CSV.');
+      return;
+    }
+
+    // Step 1: Delete all existing flashcards
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(existing => {
+        const deletePromises = existing.map(card =>
+          fetch(`${apiUrl}/${card.id}`, { method: 'DELETE' })
+        );
+
+        return Promise.all(deletePromises);
+      })
+      .then(() => {
+        // Step 2: Add new flashcards
+        const addPromises = flashcards.map(card =>
+          fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(card)
+          })
+        );
+
+        return Promise.all(addPromises);
+      })
+      .then(() => {
+        alert('CSV upload complete. Flashcards replaced.');
+        document.getElementById('uploadCsvInput').value = ''; // Clear file input
+        loadFlashcards();
+      })
+      .catch(err => {
+        alert('Error uploading CSV: ' + err.message);
+      });
   };
   reader.readAsText(file);
 });
