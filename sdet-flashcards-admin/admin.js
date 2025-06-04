@@ -105,7 +105,7 @@ function updateCard(id) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updated)
   }).then(response => {
-    if (!response.ok) return alert('Update failed.');
+    if (!response.ok) return alert('Update failed. ' + err.message);
     loadFlashcards();
   });
 }
@@ -115,7 +115,7 @@ function deleteCard(id) {
   fetch(`${apiUrl}/${id}`, {
     method: 'DELETE'
   }).then(response => {
-    if (!response.ok) return alert('Delete failed.');
+    if (!response.ok) return alert('Delete failed.' + err.message);
     loadFlashcards();
   });
 }
