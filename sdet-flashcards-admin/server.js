@@ -1,78 +1,71 @@
 const express = require('express');
-const { Pool } = require('pg');
 const cors = require('cors');
-require('dotenv').config();
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://knb123456.github.io' // Your frontend domain
+  origin: 'https://knb123456.github.io'
 }));
 app.use(express.json());
 
-// PostgreSQL Pool (Supabase) with IPv4 enforced
-const pool = new Pool({
-  connectionString: process.env.SUPABASE_URL,
-  ssl: { rejectUnauthorized: false },
-  family: 4 // Force IPv4 to avoid ENETUNREACH errors on IPv6
+// SQLite DB
+const dbPath = path.join(__dirname, 'flashcards.db');
+const db = new sqlite3.Database(dbPath);
+
+// Initialize flashcards table
+db.serialize(() => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS flashcards (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      topic TEXT,
+      question TEXT,
+      answer TEXT
+    )
+  `);
 });
 
 // Routes
-
-// Get all flashcards
-app.get('/flashcards', async (req, res) => {
-  try {
-    const { rows } = await pool.query('SELECT * FROM flashcards ORDER BY topic ASC, question ASC');
+app.get('/flashcards', (req, res) => {
+  db.all('SELECT * FROM flashcards ORDER BY topic ASC, question ASC', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
     res.json(rows);
-  } catch (err) {
-    console.error('Error details:', err);
-    res.status(500).json({ error: err.message || 'Unknown error' });
-  }
+  });
 });
 
-// Add flashcard
-app.post('/flashcards', async (req, res) => {
+app.post('/flashcards', (req, res) => {
   const { topic, question, answer } = req.body;
-  try {
-    const result = await pool.query(
-      'INSERT INTO flashcards (topic, question, answer) VALUES ($1, $2, $3) RETURNING *',
-      [topic, question, answer]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  const stmt = db.prepare('INSERT INTO flashcards (topic, question, answer) VALUES (?, ?, ?)');
+  stmt.run(topic, question, answer, function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ id: this.lastID, topic, question, answer });
+  });
+  stmt.finalize();
 });
 
-// Update flashcard
-app.put('/flashcards/:id', async (req, res) => {
-  const { id } = req.params;
+app.put('/flashcards/:id', (req, res) => {
   const { topic, question, answer } = req.body;
-  try {
-    const result = await pool.query(
-      'UPDATE flashcards SET topic = $1, question = $2, answer = $3 WHERE id = $4 RETURNING *',
-      [topic, question, answer, id]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  const stmt = db.prepare('UPDATE flashcards SET topic = ?, question = ?, answer = ? WHERE id = ?');
+  stmt.run(topic, question, answer, req.params.id, function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ id: req.params.id, topic, question, answer });
+  });
+  stmt.finalize();
 });
 
-// Delete flashcard
-app.delete('/flashcards/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    await pool.query('DELETE FROM flashcards WHERE id = $1', [id]);
+app.delete('/flashcards/:id', (req, res) => {
+  const stmt = db.prepare('DELETE FROM flashcards WHERE id = ?');
+  stmt.run(req.params.id, function (err) {
+    if (err) return res.status(500).json({ error: err.message });
     res.json({ message: 'Deleted successfully' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  });
+  stmt.finalize();
 });
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`SQLite server running at http://localhost:${port}`);
 });
