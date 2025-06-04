@@ -12,10 +12,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// PostgreSQL Pool (Supabase)
+// PostgreSQL Pool (Supabase) with IPv4 enforced
 const pool = new Pool({
   connectionString: process.env.SUPABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: { rejectUnauthorized: false },
+  family: 4 // Force IPv4 to avoid ENETUNREACH errors on IPv6
 });
 
 // Routes
@@ -27,7 +28,7 @@ app.get('/flashcards', async (req, res) => {
     res.json(rows);
   } catch (err) {
     console.error('Error details:', err);
-    res.status(500).json({ error: err.message || 'Unknown error' });    
+    res.status(500).json({ error: err.message || 'Unknown error' });
   }
 });
 
