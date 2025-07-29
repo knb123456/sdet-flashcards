@@ -1,156 +1,82 @@
-let allFlashcards = [];
-let filteredFlashcards = [];
-let index = 0;
+// Path to the flashcards.json file on GitHub Pages
+const jsonUrl = 'flashcards.json'; // Adjust if your file is in a subfolder
 
-// Elements
-const questionEl = document.getElementById('question');
-const answerEl = document.getElementById('answer');
-const showAnswerBtn = document.getElementById('showAnswerBtn');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-const changeLink = document.getElementById('changeTopicsLink');
+let flashcards = [];
+let currentCardIndex = 0;
+let currentTopic = 'All';
 
-// Fetch flashcards from API
-fetch('https://sdet-flashcards-api.onrender.com/flashcards')
-  .then(response => response.json())
-  .then(data => {
-    allFlashcards = data;
-    buildTopicSelection();
-    loadSavedTopics();
-  })
-  .catch(error => {
-    questionEl.textContent = 'Error loading flashcards.';
-    console.error('Error loading flashcards:', error);
-  });
+// Load flashcards on page load
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(jsonUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load flashcards.');
+      return response.json();
+    })
+    .then(data => {
+      flashcards = data;
+      populateTopics();
+      showCard(0);
+    })
+    .catch(err => {
+      alert('Error: ' + err.message);
+    });
+});
 
-// Build topic selection UI
-function buildTopicSelection() {
-  const topics = [...new Set(allFlashcards.map(card => card.topic))];
-  const topicDiv = document.getElementById('topicSelection') || createTopicDiv();
-  topicDiv.innerHTML = '<p>Select Topics:</p>';
+// Populate topic dropdown
+function populateTopics() {
+  const topicFilter = document.getElementById('topicFilter');
+  const topics = [...new Set(flashcards.map(card => card.topic))];
+  topics.sort();
 
+  topicFilter.innerHTML = '<option value="All">All Topics</option>';
   topics.forEach(topic => {
-    const label = document.createElement('label');
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.value = topic;
-    label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(' ' + topic));
-    topicDiv.appendChild(label);
-    topicDiv.appendChild(document.createElement('br'));
+    const option = document.createElement('option');
+    option.value = topic;
+    option.textContent = topic;
+    topicFilter.appendChild(option);
   });
 
-  const applyButton = document.createElement('button');
-  applyButton.textContent = 'Apply Topics';
-  applyButton.addEventListener('click', saveTopics);
-  topicDiv.appendChild(applyButton);
-}
-
-// Create topic selection div if missing (for older HTML)
-function createTopicDiv() {
-  const div = document.createElement('div');
-  div.id = 'topicSelection';
-  document.body.insertBefore(div, document.querySelector('.card'));
-  return div;
-}
-
-// Save selected topics and filter flashcards
-function saveTopics() {
-  const checkboxes = document.querySelectorAll('#topicSelection input[type=checkbox]');
-  const selectedTopics = Array.from(checkboxes)
-    .filter(cb => cb.checked)
-    .map(cb => cb.value);
-
-  localStorage.setItem('selectedTopics', JSON.stringify(selectedTopics));
-  document.getElementById('topicSelection').style.display = 'none';
-  toggleControls(true);
-  filterFlashcards(selectedTopics);
-}
-
-// Load topics from localStorage or show selection
-function loadSavedTopics() {
-  const saved = localStorage.getItem('selectedTopics');
-  if (saved) {
-    const selectedTopics = JSON.parse(saved);
-    filterFlashcards(selectedTopics);
-    document.getElementById('topicSelection').style.display = 'none';
-    toggleControls(true);
-  } else {
-    document.getElementById('topicSelection').style.display = 'block';
-    clearFlashcardDisplay();
-    toggleControls(false);
-  }
-}
-
-// Filter flashcards by topic and shuffle
-function filterFlashcards(selectedTopics) {
-  filteredFlashcards = allFlashcards.filter(card => selectedTopics.includes(card.topic));
-
-  if (filteredFlashcards.length === 0) {
-    questionEl.textContent = 'No flashcards for selected topics.';
-    answerEl.textContent = '';
-    answerEl.style.display = 'none';
-  } else {
-    shuffleArray(filteredFlashcards);
-    index = 0;
-    showCard();
-  }
-}
-
-// Shuffle array (Fisher-Yates)
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-// Show current card
-function showCard() {
-  if (filteredFlashcards.length === 0) return;
-  const card = filteredFlashcards[index];
-  questionEl.textContent = card.question;
-  answerEl.textContent = card.answer;
-  answerEl.style.display = 'none';
-}
-
-// Clear flashcard display
-function clearFlashcardDisplay() {
-  questionEl.textContent = '';
-  answerEl.textContent = '';
-  answerEl.style.display = 'none';
-}
-
-// Show/hide flashcard controls
-function toggleControls(show) {
-  const flashcardContainer = document.getElementById('flashcardContainer');
-  flashcardContainer.style.display = show ? 'block' : 'none';
-}
-
-
-// Button listeners
-showAnswerBtn.addEventListener('click', () => {
-  answerEl.style.display = 'block';
-});
-
-nextBtn.addEventListener('click', () => {
-  if (filteredFlashcards.length === 0) return;
-  index = (index + 1) % filteredFlashcards.length;
-  showCard();
-});
-
-prevBtn.addEventListener('click', () => {
-  if (filteredFlashcards.length === 0) return;
-  index = (index - 1 + filteredFlashcards.length) % filteredFlashcards.length;
-  showCard();
-});
-
-// Change topics link
-if (changeLink) {
-  changeLink.addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('topicSelection').style.display = 'block';
-    clearFlashcardDisplay();
-    toggleControls(false);
+  topicFilter.addEventListener('change', () => {
+    currentTopic = topicFilter.value;
+    currentCardIndex = 0;
+    showCard(0);
   });
 }
+
+// Filter flashcards by topic
+function getFilteredFlashcards() {
+  return currentTopic === 'All'
+    ? flashcards
+    : flashcards.filter(card => card.topic === currentTopic);
+}
+
+// Show a specific flashcard
+function showCard(index) {
+  const filteredCards = getFilteredFlashcards();
+  if (filteredCards.length === 0) {
+    document.getElementById('question').textContent = 'No flashcards available.';
+    document.getElementById('answer').textContent = '';
+    return;
+  }
+
+  currentCardIndex = (index + filteredCards.length) % filteredCards.length;
+  const card = filteredCards[currentCardIndex];
+
+  document.getElementById('question').textContent = card.question;
+  document.getElementById('answer').textContent = card.answer;
+  document.getElementById('answer').style.display = 'none';
+}
+
+// Navigation
+document.getElementById('prevBtn').addEventListener('click', () => {
+  showCard(currentCardIndex - 1);
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  showCard(currentCardIndex + 1);
+});
+
+// Show answer
+document.getElementById('showAnswerBtn').addEventListener('click', () => {
+  document.getElementById('answer').style.display = 'block';
+});
