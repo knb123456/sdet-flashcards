@@ -1,592 +1,592 @@
 [
   {
-    "Topic": "Playwright",
-    "Question": "What is Playwright?",
-    "Answer": "An open-source framework for end-to-end testing of web applications."
+    "topic": "Java",
+    "question": "Explain the concept of multithreading in Java and why it is important in test automation.",
+    "answer": "Multithreading allows concurrent execution thus improving efficiency. It can speed up test execution in automation."
   },
   {
-    "Topic": "Playwright",
-    "Question": "Which languages does Playwright support?",
-    "Answer": "JavaScript TypeScript Python C# Java."
+    "topic": "Java",
+    "question": "Explain the difference between '==' and '.equals()' in Java for comparing objects.",
+    "answer": "'==' checks reference equality; '.equals()' checks logical content equality."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you navigate to a URL in Playwright?",
-    "Answer": "Use `await page.goto('https://example.com')`."
+    "topic": "Java",
+    "question": "How do you handle exceptions that are not caught by a try-catch block in Java?",
+    "answer": "Uncaught exceptions are handled by the default exception handler or logged using global handlers."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you take a screenshot in Playwright?",
-    "Answer": "Use `await page.screenshot({ path: 'screenshot.png' })`."
+    "topic": "Java",
+    "question": "What are access modifiers in Java and what are their different levels of visibility?",
+    "answer": "Access modifiers are public protected default and private. They define visibility at class package subclass and world level."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you select an element by text in Playwright?",
-    "Answer": "Use `page.getByText('text')`."
+    "topic": "Java",
+    "question": "What is an exception in Java and how do you handle exceptions using try-catch blocks?",
+    "answer": "An exception is an event that disrupts normal flow. Use try-catch to handle exceptions gracefully."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you select an element by CSS selector in Playwright?",
-    "Answer": "Use `page.locator('css-selector')`."
+    "topic": "Java",
+    "question": "What is method overloading and method overriding in Java? Provide examples.",
+    "answer": "Overloading: same method name but different parameters. Overriding: subclass redefines a method from the parent class."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What is the difference between `page.locator` and `page.getByText`?",
-    "Answer": "`locator` is for CSS/element selection; `getByText` finds by text content."
+    "topic": "Java",
+    "question": "What is OOP (Object-Oriented Programming) and how is it used in Java?",
+    "answer": "OOP is a programming paradigm based on objects. Java uses OOP concepts like inheritance encapsulation abstraction and polymorphism."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you run Playwright tests in headless mode?",
-    "Answer": "By default Playwright runs in headless mode; to run with UI use `headless: false` in launch options."
+    "topic": "Java",
+    "question": "What is the difference between JDK JRE and JVM?",
+    "answer": "JDK is the Java Development Kit; JRE is the Java Runtime Environment and JVM is the Java Virtual Machine that executes Java bytecode."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you record a test in Playwright?",
-    "Answer": "Run `npx playwright codegen <url>`."
+    "topic": "Java",
+    "question": "What is the purpose of the 'final' keyword in Java and where can it be used?",
+    "answer": "'final' makes variables constant methods non-overridable and classes non-inheritable."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you handle alerts or popups in Playwright?",
-    "Answer": "\"Use `page.on('dialog'"
+    "topic": "Java",
+    "question": "What is the purpose of the 'static' keyword in Java, and how does it affect class members and methods?",
+    "answer": "'static' denotes class-level members shared across all instances. Useful for utility methods and constants."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you wait for an element to appear in Playwright?",
-    "Answer": "Use `await page.waitForSelector('selector')`."
+    "topic": "Manual Testing",
+    "question": "Explain the concept of equivalence partitioning in test case design.",
+    "answer": "Equivalence partitioning divides input into valid/invalid partitions to reduce test cases while maintaining coverage."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you emulate a mobile device in Playwright?",
-    "Answer": "Use `playwright.devices['iPhone 11']` with browser context."
+    "topic": "Manual Testing",
+    "question": "Explain the difference between functional testing and non-functional testing in manual testing.",
+    "answer": "Functional testing checks what the system does; non-functional testing checks how it performs (e.g., speed, usability)."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What are Playwright fixtures?",
-    "Answer": "Reusable objects in Playwright Test to share setup and teardown logic."
+    "topic": "Manual Testing",
+    "question": "Explain the difference between positive testing and negative testing in manual testing.",
+    "answer": "Positive testing checks valid inputs; negative testing ensures system handles invalid or unexpected inputs gracefully."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What command installs Playwright?",
-    "Answer": "`npm install @playwright/test`."
+    "topic": "Manual Testing",
+    "question": "How do you perform smoke testing and sanity testing and what are their differences?",
+    "answer": "Smoke: basic functionality test; Sanity: quick checks after minor changes. Smoke is broader sanity is narrower."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you execute Playwright tests?",
-    "Answer": "Use `npx playwright test`."
+    "topic": "Manual Testing",
+    "question": "What are the different levels of testing (e.g. unit testing - integration testing - system testing) and their purposes in the testing process?",
+    "answer": "Unit: test components; Integration: test interactions; System: test end-to-end behavior."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What is the difference between Playwright and Selenium?",
-    "Answer": "Playwright is faster has auto-waiting and better modern web support; Selenium has broader ecosystem but can be slower."
+    "topic": "Manual Testing",
+    "question": "What is a test case, and how do you write an effective test case?",
+    "answer": "A test case describes test steps data expected results. An effective one is clear concise, and covers requirements."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What is Playwright?",
-    "Answer": "An open-source framework for end-to-end testing of web applications"
+    "topic": "Manual Testing",
+    "question": "What is exploratory testing, and when is it most useful in the testing process?",
+    "answer": "Exploratory testing is unscripted and relies on tester intuition. It's useful in early stages or poorly documented systems."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you select an element by CSS selector in Playwright?",
-    "Answer": "Use `page.locator('css-selector')`"
+    "topic": "Manual Testing",
+    "question": "What is regression testing and why is it important in manual testing?",
+    "answer": "Regression testing verifies that new changes haven't affected existing functionality. It ensures product stability."
   },
   {
-    "Topic": "Playwright",
-    "Question": "Which languages does Playwright support?",
-    "Answer": "JavaScript TypeScript Python C# Java"
+    "topic": "Manual Testing",
+    "question": "What is the purpose of a Traceability Matrix in manual testing and how is it created?",
+    "answer": "It maps requirements to test cases to ensure coverage. Created using a spreadsheet or test management tool."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you handle alerts or popups in Playwright?",
-    "Answer": "Use `page.on('dialog'"
+    "topic": "Manual Testing",
+    "question": "What is the Test Plan and what information should it contain?",
+    "answer": "A Test Plan outlines scope objectives resources schedule and test strategy."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What command installs Playwright?",
-    "Answer": "`npm install @playwright/test`"
+    "topic": "Other Miscellaneous Questions",
+    "question": "Explain branching merging and resolving conflicts in Git.",
+    "answer": "Branching allows parallel development. Merging integrates changes. Conflicts occur when changes overlap and must be resolved manually."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you navigate to a URL in Playwright?",
-    "Answer": "Use `await page.goto('https://example.com')`"
+    "topic": "Other Miscellaneous Questions",
+    "question": "Explain how automation tests can be integrated with CI/CD tools like Jenkins.",
+    "answer": "Configure Jenkins to trigger test execution after builds using jobs or pipelines. View results and logs within Jenkins."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you wait for an element to appear in Playwright?",
-    "Answer": "Use `await page.waitForSelector('selector')`"
+    "topic": "Other Miscellaneous Questions",
+    "question": "Explain how to prioritize test cases for regression testing.",
+    "answer": "Prioritize based on business impact critical functionality and recent code changes."
   },
   {
-    "Topic": "Performance",
-    "Question": "In performance testing what is Throughput",
-    "Answer": "The number of transactions or requests processed per second/minute"
+    "topic": "Other Miscellaneous Questions",
+    "question": "How do you automate mobile gestures like swipe scroll long press and pinch-zoom in Appium?",
+    "answer": "Use TouchAction or W3C Actions in Appium to simulate gestures with coordinates and durations."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you record a test in Playwright?",
-    "Answer": "Run `npx playwright codegen <url>`"
+    "topic": "Other Miscellaneous Questions",
+    "question": "How do you perform parallel testing with Appium and why is it beneficial?",
+    "answer": "Use multiple devices or emulators with unique ports. It speeds up testing and ensures wider coverage."
   },
   {
-    "Topic": "Playwright",
-    "Question": "What is the difference between `page.locator` and `page.getByText`?",
-    "Answer": "`locator` is for CSS/element selection; `getByText` finds by text content"
+    "topic": "Other Miscellaneous Questions",
+    "question": "What is Appium Inspector and how can you use it in element identification?",
+    "answer": "Appium Inspector lets you explore mobile UI elements view locators and generate code snippets for automation."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you execute Playwright tests?",
-    "Answer": "Use `npx playwright test`"
+    "topic": "Other Miscellaneous Questions",
+    "question": "What is the difference between maintainable and reusable automation code?",
+    "answer": "Maintainable code is easy to update; reusable code can be used across multiple tests or projects."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you emulate a mobile device in Playwright?",
-    "Answer": "Use `playwright.devices['iPhone 11']` with browser context"
+    "topic": "Other Miscellaneous Questions",
+    "question": "What is the significance of desired capabilities in Appium? How are they used?",
+    "answer": "Desired capabilities specify test environment details (device platform app info) required to initiate Appium sessions."
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you select an element by text in Playwright?",
-    "Answer": "Use `page.getByText('text')`"
+    "topic": "Performance",
+    "question": "In performance testing what is Response Time measure",
+    "answer": "Time taken for the system to respond to a request. Typically measured in milliseconds (ms) or seconds (s)"
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you take a screenshot in Playwright?",
-    "Answer": "Use `await page.screenshot({ path: 'screenshot.png' })`"
+    "topic": "Performance",
+    "question": "In performance testing what is RPS (Requests per seconds)",
+    "answer": "How many requests the system can handle each second"
   },
   {
-    "Topic": "Playwright",
-    "Question": "What are Playwright fixtures?",
-    "Answer": "Reusable objects in Playwright Test to share setup and teardown logic"
+    "topic": "Performance",
+    "question": "In performance testing what is Throughput",
+    "answer": "The number of transactions or requests processed per second/minute"
   },
   {
-    "Topic": "Playwright",
-    "Question": "How do you run Playwright tests in headless mode?",
-    "Answer": "By default Playwright runs in headless mode; to run with UI use `headless: false` in launch options"
+    "topic": "Playwright",
+    "question": "How do you emulate a mobile device in Playwright?",
+    "answer": "Use `playwright.devices['iPhone 11']` with browser context."
   },
   {
-    "Topic": "Performance",
-    "Question": "In performance testing what is RPS (Requests per seconds)",
-    "Answer": "How many requests the system can handle each second"
+    "topic": "Playwright",
+    "question": "How do you emulate a mobile device in Playwright?",
+    "answer": "Use `playwright.devices['iPhone 11']` with browser context"
   },
   {
-    "Topic": "Performance",
-    "Question": "In performance testing what is Response Time measure",
-    "Answer": "Time taken for the system to respond to a request. Typically measured in milliseconds (ms) or seconds (s)"
+    "topic": "Playwright",
+    "question": "How do you execute Playwright tests?",
+    "answer": "Use `npx playwright test`."
   },
   {
-    "Topic": "Selenium",
-    "Question": "Explain the difference between findElement and findElements in WebDriver.",
-    "Answer": "findElement returns a single WebElement and throws an exception if not found; findElements returns a list of elements or an empty list if none are found."
+    "topic": "Playwright",
+    "question": "How do you execute Playwright tests?",
+    "answer": "Use `npx playwright test`"
   },
   {
-    "Topic": "Selenium",
-    "Question": "What is the WebDriver interface and how do you instantiate a WebDriver object for different browsers?",
-    "Answer": "WebDriver is an interface. You instantiate it with classes like ChromeDriver or FirefoxDriver - e.g. WebDriver driver = new ChromeDriver();"
+    "topic": "Playwright",
+    "question": "How do you handle alerts or popups in Playwright?",
+    "answer": "Use `page.on('dialog', callback)` to handle alerts/popups."
   },
   {
-    "Topic": "Selenium",
-    "Question": "How can you handle different types of alerts and pop-ups in Selenium WebDriver?",
-    "Answer": "Use the Alert interface: Alert alert = driver.switchTo().alert(); then call alert.accept() alert.dismiss() or alert.getText()."
+    "topic": "Playwright",
+    "question": "How do you handle alerts or popups in Playwright?",
+    "answer": "Use `page.on('dialog'"
   },
   {
-    "Topic": "Selenium",
-    "Question": "Explain the concept of implicit and explicit waits in WebDriver.",
-    "Answer": "Implicit Wait sets a global wait time; Explicit Wait waits for specific conditions using WebDriverWait and ExpectedConditions."
+    "topic": "Playwright",
+    "question": "How do you navigate to a URL in Playwright?",
+    "answer": "Use `await page.goto('https://example.com')`."
   },
   {
-    "Topic": "Selenium",
-    "Question": "What is the Page Object Model (POM) in Selenium WebDriver, and why is it beneficial?",
-    "Answer": "POM is a design pattern where each web page is represented by a class - improving code maintainability and reusability."
+    "topic": "Playwright",
+    "question": "How do you navigate to a URL in Playwright?",
+    "answer": "Use `await page.goto('https://example.com')`"
   },
   {
-    "Topic": "Selenium",
-    "Question": "Explain the concept of WebDriver Waits. What are some types available?",
-    "Answer": "WebDriver waits synchronize test execution. Types include Implicit Wait Explicit Wait and Fluent Wait."
+    "topic": "Playwright",
+    "question": "How do you record a test in Playwright?",
+    "answer": "Run `npx playwright codegen <url>`."
   },
   {
-    "Topic": "Selenium",
-    "Question": "How can you handle frames and iframes in Selenium WebDriver?",
-    "Answer": "Switch using driver.switchTo().frame('frameName') or driver.switchTo().frame(index)."
+    "topic": "Playwright",
+    "question": "How do you record a test in Playwright?",
+    "answer": "Run `npx playwright codegen <url>`"
   },
   {
-    "Topic": "Selenium",
-    "Question": "What are Selenium Grid and its advantages?",
-    "Answer": "Selenium Grid enables parallel and cross-browser test execution on multiple machines thus speeding up testing."
+    "topic": "Playwright",
+    "question": "How do you run Playwright tests in headless mode?",
+    "answer": "By default Playwright runs in headless mode; to run with UI use `headless: false` in launch options."
   },
   {
-    "Topic": "Selenium",
-    "Question": "What is the difference between driver.close() and driver.quit() in WebDriver?",
-    "Answer": "close() closes the current browser window; quit() closes all windows and ends the WebDriver session."
+    "topic": "Playwright",
+    "question": "How do you run Playwright tests in headless mode?",
+    "answer": "By default Playwright runs in headless mode; to run with UI use `headless: false` in launch options"
   },
   {
-    "Topic": "Java",
-    "Question": "What is the difference between JDK JRE and JVM?",
-    "Answer": "JDK is the Java Development Kit; JRE is the Java Runtime Environment and JVM is the Java Virtual Machine that executes Java bytecode."
+    "topic": "Playwright",
+    "question": "How do you select an element by CSS selector in Playwright?",
+    "answer": "Use `page.locator('css-selector')`."
   },
   {
-    "Topic": "Java",
-    "Question": "What is OOP (Object-Oriented Programming) and how is it used in Java?",
-    "Answer": "OOP is a programming paradigm based on objects. Java uses OOP concepts like inheritance encapsulation abstraction and polymorphism."
+    "topic": "Playwright",
+    "question": "How do you select an element by CSS selector in Playwright?",
+    "answer": "Use `page.locator('css-selector')`"
   },
   {
-    "Topic": "Java",
-    "Question": "Explain the difference between '==' and '.equals()' in Java for comparing objects.",
-    "Answer": "'==' checks reference equality; '.equals()' checks logical content equality."
+    "topic": "Playwright",
+    "question": "How do you select an element by text in Playwright?",
+    "answer": "Use `page.getByText('text')`."
   },
   {
-    "Topic": "Java",
-    "Question": "What is an exception in Java and how do you handle exceptions using try-catch blocks?",
-    "Answer": "An exception is an event that disrupts normal flow. Use try-catch to handle exceptions gracefully."
+    "topic": "Playwright",
+    "question": "How do you select an element by text in Playwright?",
+    "answer": "Use `page.getByText('text')`"
   },
   {
-    "Topic": "Java",
-    "Question": "What are access modifiers in Java and what are their different levels of visibility?",
-    "Answer": "Access modifiers are public protected default and private. They define visibility at class package subclass and world level."
+    "topic": "Playwright",
+    "question": "How do you take a screenshot in Playwright?",
+    "answer": "Use `await page.screenshot({ path: 'screenshot.png' })`."
   },
   {
-    "Topic": "Java",
-    "Question": "What is method overloading and method overriding in Java? Provide examples.",
-    "Answer": "Overloading: same method name but different parameters. Overriding: subclass redefines a method from the parent class."
+    "topic": "Playwright",
+    "question": "How do you take a screenshot in Playwright?",
+    "answer": "Use `await page.screenshot({ path: 'screenshot.png' })`"
   },
   {
-    "Topic": "Java",
-    "Question": "Explain the concept of multithreading in Java and why it is important in test automation.",
-    "Answer": "Multithreading allows concurrent execution thus improving efficiency. It can speed up test execution in automation."
+    "topic": "Playwright",
+    "question": "How do you wait for an element to appear in Playwright?",
+    "answer": "Use `await page.waitForSelector('selector')`."
   },
   {
-    "Topic": "Java",
-    "Question": "What is the purpose of the 'final' keyword in Java and where can it be used?",
-    "Answer": "'final' makes variables constant methods non-overridable and classes non-inheritable."
+    "topic": "Playwright",
+    "question": "How do you wait for an element to appear in Playwright?",
+    "answer": "Use `await page.waitForSelector('selector')`"
   },
   {
-    "Topic": "Java",
-    "Question": "How do you handle exceptions that are not caught by a try-catch block in Java?",
-    "Answer": "Uncaught exceptions are handled by the default exception handler or logged using global handlers."
+    "topic": "Playwright",
+    "question": "What are Playwright fixtures?",
+    "answer": "Reusable objects in Playwright Test to share setup and teardown logic."
   },
   {
-    "Topic": "Java",
-    "Question": "What is the purpose of the 'static' keyword in Java, and how does it affect class members and methods?",
-    "Answer": "'static' denotes class-level members shared across all instances. Useful for utility methods and constants."
+    "topic": "Playwright",
+    "question": "What are Playwright fixtures?",
+    "answer": "Reusable objects in Playwright Test to share setup and teardown logic"
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What is a test case, and how do you write an effective test case?",
-    "Answer": "A test case describes test steps data expected results. An effective one is clear concise, and covers requirements."
+    "topic": "Playwright",
+    "question": "What command installs Playwright?",
+    "answer": "`npm install @playwright/test`."
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What is regression testing and why is it important in manual testing?",
-    "Answer": "Regression testing verifies that new changes haven't affected existing functionality. It ensures product stability."
+    "topic": "Playwright",
+    "question": "What command installs Playwright?",
+    "answer": "`npm install @playwright/test`"
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "Explain the difference between functional testing and non-functional testing in manual testing.",
-    "Answer": "Functional testing checks what the system does; non-functional testing checks how it performs (e.g., speed, usability)."
+    "topic": "Playwright",
+    "question": "What is Playwright?",
+    "answer": "An open-source framework for end-to-end testing of web applications."
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What is the Test Plan and what information should it contain?",
-    "Answer": "A Test Plan outlines scope objectives resources schedule and test strategy."
+    "topic": "Playwright",
+    "question": "What is Playwright?",
+    "answer": "An open-source framework for end-to-end testing of web applications"
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What are the different levels of testing (e.g. unit testing - integration testing - system testing) and their purposes in the testing process?",
-    "Answer": "Unit: test components; Integration: test interactions; System: test end-to-end behavior."
+    "topic": "Playwright",
+    "question": "What is the difference between `page.locator` and `page.getByText`?",
+    "answer": "`locator` is for CSS/element selection; `getByText` finds by text content."
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "How do you perform smoke testing and sanity testing and what are their differences?",
-    "Answer": "Smoke: basic functionality test; Sanity: quick checks after minor changes. Smoke is broader sanity is narrower."
+    "topic": "Playwright",
+    "question": "What is the difference between `page.locator` and `page.getByText`?",
+    "answer": "`locator` is for CSS/element selection; `getByText` finds by text content"
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "Explain the concept of equivalence partitioning in test case design.",
-    "Answer": "Equivalence partitioning divides input into valid/invalid partitions to reduce test cases while maintaining coverage."
+    "topic": "Playwright",
+    "question": "What is the difference between Playwright and Selenium?",
+    "answer": "Playwright is faster has auto-waiting and better modern web support; Selenium has broader ecosystem but can be slower."
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What is exploratory testing, and when is it most useful in the testing process?",
-    "Answer": "Exploratory testing is unscripted and relies on tester intuition. It's useful in early stages or poorly documented systems."
+    "topic": "Playwright",
+    "question": "Which languages does Playwright support?",
+    "answer": "JavaScript TypeScript Python C# Java."
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "What is the purpose of a Traceability Matrix in manual testing and how is it created?",
-    "Answer": "It maps requirements to test cases to ensure coverage. Created using a spreadsheet or test management tool."
+    "topic": "Playwright",
+    "question": "Which languages does Playwright support?",
+    "answer": "JavaScript TypeScript Python C# Java"
   },
   {
-    "Topic": "Manual Testing",
-    "Question": "Explain the difference between positive testing and negative testing in manual testing.",
-    "Answer": "Positive testing checks valid inputs; negative testing ensures system handles invalid or unexpected inputs gracefully."
+    "topic": "Selenium",
+    "question": "Explain the concept of implicit and explicit waits in WebDriver.",
+    "answer": "Implicit Wait sets a global wait time; Explicit Wait waits for specific conditions using WebDriverWait and ExpectedConditions."
   },
   {
-    "Topic": "TestNG",
-    "Question": "What is TestNG, and how does it differ from JUnit?",
-    "Answer": "TestNG is a testing framework inspired by JUnit but more powerful, offering features like parallel testing test grouping and flexible test configuration."
+    "topic": "Selenium",
+    "question": "Explain the concept of WebDriver Waits. What are some types available?",
+    "answer": "WebDriver waits synchronize test execution. Types include Implicit Wait Explicit Wait and Fluent Wait."
   },
   {
-    "Topic": "TestNG",
-    "Question": "Explain the usage of annotations like @Test, @BeforeSuite, and @DataProvider in TestNG.",
-    "Answer": "@Test defines test methods; @BeforeSuite runs before all tests in the suite; @DataProvider supplies data to test methods."
+    "topic": "Selenium",
+    "question": "Explain the difference between findElement and findElements in WebDriver.",
+    "answer": "findElement returns a single WebElement and throws an exception if not found; findElements returns a list of elements or an empty list if none are found."
   },
   {
-    "Topic": "TestNG",
-    "Question": "How can you prioritize test methods in TestNG?",
-    "Answer": "Use the 'priority' attribute in the @Test annotation, e.g. @Test(priority = 1)."
+    "topic": "Selenium",
+    "question": "How can you handle different types of alerts and pop-ups in Selenium WebDriver?",
+    "answer": "Use the Alert interface: Alert alert = driver.switchTo().alert(); then call alert.accept() alert.dismiss() or alert.getText()."
   },
   {
-    "Topic": "TestNG",
-    "Question": "What are dependencies in TestNG and how do you define them?",
-    "Answer": "Use 'dependsOnMethods' or 'dependsOnGroups' to define test execution order based on dependencies."
+    "topic": "Selenium",
+    "question": "How can you handle frames and iframes in Selenium WebDriver?",
+    "answer": "Switch using driver.switchTo().frame('frameName') or driver.switchTo().frame(index)."
   },
   {
-    "Topic": "TestNG",
-    "Question": "How do you group test methods in TestNG and why is it useful?",
-    "Answer": "Use the 'groups' attribute in @Test to categorize tests. Useful for running specific sets of tests."
+    "topic": "Selenium",
+    "question": "What are Selenium Grid and its advantages?",
+    "answer": "Selenium Grid enables parallel and cross-browser test execution on multiple machines thus speeding up testing."
   },
   {
-    "Topic": "TestNG",
-    "Question": "Explain the usage of DataProvider with a real-world example.",
-    "Answer": "DataProvider allows parameterization of tests. E.g. testing login with multiple credentials supplied by a method returning Object[][] array."
+    "topic": "Selenium",
+    "question": "What is the difference between driver.close() and driver.quit() in WebDriver?",
+    "answer": "close() closes the current browser window; quit() closes all windows and ends the WebDriver session."
   },
   {
-    "Topic": "TestNG",
-    "Question": "What is the purpose of @Listeners annotation in TestNG and how do you use it?",
-    "Answer": "Listeners provide hooks for test events like start success or failure. Implement ITestListener and annotate with @Listeners."
+    "topic": "Selenium",
+    "question": "What is the Page Object Model (POM) in Selenium WebDriver, and why is it beneficial?",
+    "answer": "POM is a design pattern where each web page is represented by a class - improving code maintainability and reusability."
   },
   {
-    "Topic": "TestNG",
-    "Question": "How can you run TestNG tests in parallel, and what are the advantages?",
-    "Answer": "Define 'parallel' in testng.xml (methods, classes, tests). It speeds up execution and improves efficiency."
+    "topic": "Selenium",
+    "question": "What is the WebDriver interface and how do you instantiate a WebDriver object for different browsers?",
+    "answer": "WebDriver is an interface. You instantiate it with classes like ChromeDriver or FirefoxDriver - e.g. WebDriver driver = new ChromeDriver();"
   },
   {
-    "Topic": "TestNG",
-    "Question": "How to manage data-driven testing and how can you implement it using a DataProvider?",
-    "Answer": "Implement a method annotated with @DataProvider that returns test data. Link it to the test method using dataProvider attribute."
+    "topic": "Test Automation Frameworks",
+    "question": "Can you describe a data-driven testing approach?",
+    "answer": "A method where test data is separated from test logic. Scripts read from external sources to test multiple inputs."
   },
   {
-    "Topic": "TestNG",
-    "Question": "Explain the concept of TestNG listeners and list a few built-in listeners.",
-    "Answer": "Listeners monitor test execution. Built-in examples: ITestListener ISuiteListener IReporter."
+    "topic": "Test Automation Frameworks",
+    "question": "Describe the concepts of Behavior-Driven Development (BDD) and how tools like Cucumber fit into this approach.",
+    "answer": "BDD encourages collaboration using plain language specs. Tools like Cucumber let you write tests in Gherkin syntax."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What is a test automation framework, and why is it important in Automation testing?",
-    "Answer": "A framework is a structured approach to automate tests. It improves reusability maintenance and consistency."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain how to build a plugin-based architecture for test execution.",
+    "answer": "Implement hooks or plugins for custom reporting parallel execution and enhanced test orchestration using frameworks like TestNG or Playwright Test."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain the differences between Data-Driven and Keyword-Driven test automation frameworks.",
-    "Answer": "Data-Driven separates test data from scripts; Keyword-Driven uses keywords to represent actions allowing non-coders to write tests."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain the concept of Page Object Model and Page Factory in Selenium. How do they simplify test automation?",
+    "answer": "POM separates test logic and locators. Page Factory uses @FindBy annotations to initialize web elements for cleaner code."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What are the common automation frameworks? When would you use each?",
-    "Answer": "Types include Linear Modular Data-Driven Keyword-Driven Hybrid BDD. Choice depends on complexity and team skill level."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain the concept of parallel execution in test automation frameworks. How does it improve testing efficiency, and what tools can you use for parallel testing?",
+    "answer": "Running tests concurrently reduces execution time. Tools: TestNG Selenium Grid JUnit5 cloud platforms like BrowserStack."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What is the Page Object Model (POM) and how does it enhance test automation?",
-    "Answer": "POM organizes test code by web pages making it easier to maintain and reuse element locators and actions."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain the differences between Data-Driven and Keyword-Driven test automation frameworks.",
+    "answer": "Data-Driven separates test data from scripts; Keyword-Driven uses keywords to represent actions allowing non-coders to write tests."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Describe the concepts of Behavior-Driven Development (BDD) and how tools like Cucumber fit into this approach.",
-    "Answer": "BDD encourages collaboration using plain language specs. Tools like Cucumber let you write tests in Gherkin syntax."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain the pros and cons of data-driven vs behavior-driven testing.",
+    "answer": "Data-driven testing uses external datasets for parameterized tests while behavior-driven (BDD) focuses on natural language steps (Given/When/Then). Data-driven is faster for coverage while BDD improves collaboration."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you handle test data in a test automation framework?",
-    "Answer": "Store data in external files (CSV Excel JSON) or databases. Load it dynamically into test scripts."
+    "topic": "Test Automation Frameworks",
+    "question": "Explain your debugging approach when tests fail on CI but pass locally.",
+    "answer": "Debug using logs screenshots network traces running tests locally with CI configurations and isolating environment differences."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Can you describe a data-driven testing approach?",
-    "Answer": "A method where test data is separated from test logic. Scripts read from external sources to test multiple inputs."
+    "topic": "Test Automation Frameworks",
+    "question": "How can you ensure cross-browser compatibility testing within a test automation framework?",
+    "answer": "Use WebDriverManager or cloud tools to test on multiple browsers. Maintain a browser config file for switching contexts."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What is the role of configuration files (e.g. properties files) in a test automation framework, and how are they useful?",
-    "Answer": "They store environment-specific settings (URLs credentials). Useful for managing different test environments."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you configure CI/CD pipelines for automated test execution?",
+    "answer": "Use CI/CD tools like Jenkins GitHub Actions or GitLab CI to trigger tests on each commit containerize with Docker and generate automated reports."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain the concept of parallel execution in test automation frameworks. How does it improve testing efficiency, and what tools can you use for parallel testing?",
-    "Answer": "Running tests concurrently reduces execution time. Tools: TestNG Selenium Grid JUnit5 cloud platforms like BrowserStack."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you design a framework that supports parallel and cross-browser testing?",
+    "answer": "Use a grid-based setup like Selenium Grid or cloud services (BrowserStack Sauce Labs) configure test runners (TestNG Playwright Test) for parallel execution and ensure tests are stateless and independent."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How can you ensure cross-browser compatibility testing within a test automation framework?",
-    "Answer": "Use WebDriverManager or cloud tools to test on multiple browsers. Maintain a browser config file for switching contexts."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you design a test framework that supports multi-language/platform testing?",
+    "answer": "Design language-agnostic APIs or drivers abstract test logic and build a common layer to support multiple platforms (web mobile)."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain the concept of Page Object Model and Page Factory in Selenium. How do they simplify test automation?",
-    "Answer": "POM separates test logic and locators. Page Factory uses @FindBy annotations to initialize web elements for cleaner code."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you handle mocking and stubbing in E2E tests?",
+    "answer": "Mocking/stubbing is done using libraries like WireMock or Sinon to simulate backend responses and reduce external dependencies."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What is the role of logging and reporting in a test automation framework, and how do you implement them effectively?",
-    "Answer": "Logging helps debug; reporting summarizes results. Use Log4j for logs and ExtentReports or Allure for reporting."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you handle test data in a test automation framework?",
+    "answer": "Store data in external files (CSV Excel JSON) or databases. Load it dynamically into test scripts."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "Explain how automation tests can be integrated with CI/CD tools like Jenkins.",
-    "Answer": "Configure Jenkins to trigger test execution after builds using jobs or pipelines. View results and logs within Jenkins."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you implement custom annotations or decorators in your framework?",
+    "answer": "Custom annotations/decorators allow tagging tests with metadata or enabling conditional execution e.g. with Java annotations or Python decorators."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "Explain branching merging and resolving conflicts in Git.",
-    "Answer": "Branching allows parallel development. Merging integrates changes. Conflicts occur when changes overlap and must be resolved manually."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you implement retries test dependencies and soft assertions?",
+    "answer": "Use built-in retry mechanisms (TestNG\u2019s retry analyzer Playwright retries) manage dependencies carefully and apply soft assertions (e.g. AssertJ Chai) to collect multiple failures in one run."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "Explain how to prioritize test cases for regression testing.",
-    "Answer": "Prioritize based on business impact critical functionality and recent code changes."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you integrate logging and reporting into your test framework?",
+    "answer": "Integrate libraries like Allure ExtentReports or custom logging solutions; capture screenshots logs and steps for every test case."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "What is the difference between maintainable and reusable automation code?",
-    "Answer": "Maintainable code is easy to update; reusable code can be used across multiple tests or projects."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you manage test data for automation\u2014hardcoded factories or external files?",
+    "answer": "Prefer external files (JSON CSV databases) or data factories over hardcoding to ensure flexibility and scalability in managing test data."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "What is the significance of desired capabilities in Appium? How are they used?",
-    "Answer": "Desired capabilities specify test environment details (device platform app info) required to initiate Appium sessions."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you measure test coverage and optimize it in automation?",
+    "answer": "Measure coverage using tools like Jacoco (Java) Istanbul (JS/TS) or Codecov and focus on critical path and boundary test cases."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "How do you automate mobile gestures like swipe scroll long press and pinch-zoom in Appium?",
-    "Answer": "Use TouchAction or W3C Actions in Appium to simulate gestures with coordinates and durations."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you organize your test directory structure for reusability?",
+    "answer": "Use a hierarchical structure: `tests/` `pages/` `utils/` `data/` and `reports/` for separation and reusability."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "What is Appium Inspector and how can you use it in element identification?",
-    "Answer": "Appium Inspector lets you explore mobile UI elements view locators and generate code snippets for automation."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you perform visual testing or UI regressions in automation?",
+    "answer": "Visual testing involves tools like Applitools or Percy to detect layout changes and regressions across builds."
   },
   {
-    "Topic": "Other Miscellaneous Questions",
-    "Question": "How do you perform parallel testing with Appium and why is it beneficial?",
-    "Answer": "Use multiple devices or emulators with unique ports. It speeds up testing and ensures wider coverage."
+    "topic": "Test Automation Frameworks",
+    "question": "How do you version-control test scripts and share reusable modules across teams?",
+    "answer": "Use Git for version control organize reusable modules in libraries and leverage submodules or shared packages across repositories."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What are the key components of a scalable test automation framework?",
-    "Answer": "Key components include modular architecture Page Object Model or Screenplay Pattern reusable utilities proper test data management logging and reporting CI/CD integration and cross-browser support."
+    "topic": "Test Automation Frameworks",
+    "question": "How would you handle dynamic web elements (changing IDs AJAX content)?",
+    "answer": "Use dynamic locators (XPath with contains or starts-with) indexing strategies and wait conditions (Playwright auto-wait Selenium\u2019s ExpectedConditions)."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you design a framework that supports parallel and cross-browser testing?",
-    "Answer": "Use a grid-based setup like Selenium Grid or cloud services (BrowserStack Sauce Labs) configure test runners (TestNG Playwright Test) for parallel execution and ensure tests are stateless and independent."
+    "topic": "Test Automation Frameworks",
+    "question": "How would you migrate a legacy test suite to a modern automation framework?",
+    "answer": "Incrementally refactor tests to modern frameworks (e.g. Selenium to Playwright) reuse business logic and migrate step by step while ensuring backward compatibility."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How would you structure tests to ensure maintainability in large projects?",
-    "Answer": "Use modular layered architecture (Page Objects utilities) group tests logically maintain clear naming conventions and implement DRY (Don't Repeat Yourself) principles."
+    "topic": "Test Automation Frameworks",
+    "question": "How would you structure tests to ensure maintainability in large projects?",
+    "answer": "Use modular layered architecture (Page Objects utilities) group tests logically maintain clear naming conventions and implement DRY (Don't Repeat Yourself) principles."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What\u2019s the role of Page Object Model vs Screenplay Pattern in automation frameworks?",
-    "Answer": "POM focuses on page abstractions while Screenplay emphasizes actor-centric interactions and tasks improving readability and reusability in larger projects."
+    "topic": "Test Automation Frameworks",
+    "question": "What are common pitfalls while using Selenium or Playwright in large test suites?",
+    "answer": "Common pitfalls include poor locator strategies lack of synchronization excessive hard waits and not modularizing test code."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you manage test data for automation\u2014hardcoded factories or external files?",
-    "Answer": "Prefer external files (JSON CSV databases) or data factories over hardcoding to ensure flexibility and scalability in managing test data."
+    "topic": "Test Automation Frameworks",
+    "question": "What are some ways to reduce flakiness in automated UI tests?",
+    "answer": "Stabilize locators use explicit waits avoid hard waits retry failed steps run tests in isolated environments and use robust synchronization methods."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What are some ways to reduce flakiness in automated UI tests?",
-    "Answer": "Stabilize locators use explicit waits avoid hard waits retry failed steps run tests in isolated environments and use robust synchronization methods."
+    "topic": "Test Automation Frameworks",
+    "question": "What are the common automation frameworks? When would you use each?",
+    "answer": "Types include Linear Modular Data-Driven Keyword-Driven Hybrid BDD. Choice depends on complexity and team skill level."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you integrate logging and reporting into your test framework?",
-    "Answer": "Integrate libraries like Allure ExtentReports or custom logging solutions; capture screenshots logs and steps for every test case."
+    "topic": "Test Automation Frameworks",
+    "question": "What are the key components of a scalable test automation framework?",
+    "answer": "Key components include modular architecture Page Object Model or Screenplay Pattern reusable utilities proper test data management logging and reporting CI/CD integration and cross-browser support."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain how to build a plugin-based architecture for test execution.",
-    "Answer": "Implement hooks or plugins for custom reporting parallel execution and enhanced test orchestration using frameworks like TestNG or Playwright Test."
+    "topic": "Test Automation Frameworks",
+    "question": "What is a test automation framework, and why is it important in Automation testing?",
+    "answer": "A framework is a structured approach to automate tests. It improves reusability maintenance and consistency."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you implement retries test dependencies and soft assertions?",
-    "Answer": "Use built-in retry mechanisms (TestNG\u2019s retry analyzer Playwright retries) manage dependencies carefully and apply soft assertions (e.g. AssertJ Chai) to collect multiple failures in one run."
+    "topic": "Test Automation Frameworks",
+    "question": "What is fixture-driven testing and how is it applied in Playwright/TestNG?",
+    "answer": "Fixture-driven testing involves reusable setup/teardown methods shared across tests. In Playwright fixtures are defined in the test config; in TestNG @Before/After annotations manage fixtures."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What\u2019s your approach to integrating API and UI tests within the same framework?",
-    "Answer": "Build a hybrid framework that combines API validation with UI workflows to ensure both layers are tested in the same pipeline."
+    "topic": "Test Automation Frameworks",
+    "question": "What is the Page Object Model (POM) and how does it enhance test automation?",
+    "answer": "POM organizes test code by web pages making it easier to maintain and reuse element locators and actions."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How would you handle dynamic web elements (changing IDs AJAX content)?",
-    "Answer": "Use dynamic locators (XPath with contains or starts-with) indexing strategies and wait conditions (Playwright auto-wait Selenium\u2019s ExpectedConditions)."
+    "topic": "Test Automation Frameworks",
+    "question": "What is the role of configuration files (e.g. properties files) in a test automation framework, and how are they useful?",
+    "answer": "They store environment-specific settings (URLs credentials). Useful for managing different test environments."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What is fixture-driven testing and how is it applied in Playwright/TestNG?",
-    "Answer": "Fixture-driven testing involves reusable setup/teardown methods shared across tests. In Playwright fixtures are defined in the test config; in TestNG @Before/After annotations manage fixtures."
+    "topic": "Test Automation Frameworks",
+    "question": "What is the role of logging and reporting in a test automation framework, and how do you implement them effectively?",
+    "answer": "Logging helps debug; reporting summarizes results. Use Log4j for logs and ExtentReports or Allure for reporting."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you organize your test directory structure for reusability?",
-    "Answer": "Use a hierarchical structure: `tests/` `pages/` `utils/` `data/` and `reports/` for separation and reusability."
+    "topic": "Test Automation Frameworks",
+    "question": "What\u2019s the role of Page Object Model vs Screenplay Pattern in automation frameworks?",
+    "answer": "POM focuses on page abstractions while Screenplay emphasizes actor-centric interactions and tasks improving readability and reusability in larger projects."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain the pros and cons of data-driven vs behavior-driven testing.",
-    "Answer": "Data-driven testing uses external datasets for parameterized tests while behavior-driven (BDD) focuses on natural language steps (Given/When/Then). Data-driven is faster for coverage while BDD improves collaboration."
+    "topic": "Test Automation Frameworks",
+    "question": "What\u2019s your approach to integrating API and UI tests within the same framework?",
+    "answer": "Build a hybrid framework that combines API validation with UI workflows to ensure both layers are tested in the same pipeline."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you configure CI/CD pipelines for automated test execution?",
-    "Answer": "Use CI/CD tools like Jenkins GitHub Actions or GitLab CI to trigger tests on each commit containerize with Docker and generate automated reports."
+    "topic": "Test Automation Frameworks",
+    "question": "What\u2019s your strategy for reporting flaky or intermittent test failures?",
+    "answer": "Use reporting tools like Allure or track flaky tests in CI pipelines and apply test quarantine or retries with failure thresholds."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What are common pitfalls while using Selenium or Playwright in large test suites?",
-    "Answer": "Common pitfalls include poor locator strategies lack of synchronization excessive hard waits and not modularizing test code."
+    "topic": "TestNG",
+    "question": "Explain the concept of TestNG listeners and list a few built-in listeners.",
+    "answer": "Listeners monitor test execution. Built-in examples: ITestListener ISuiteListener IReporter."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you implement custom annotations or decorators in your framework?",
-    "Answer": "Custom annotations/decorators allow tagging tests with metadata or enabling conditional execution e.g. with Java annotations or Python decorators."
+    "topic": "TestNG",
+    "question": "Explain the usage of annotations like @Test, @BeforeSuite, and @DataProvider in TestNG.",
+    "answer": "@Test defines test methods; @BeforeSuite runs before all tests in the suite; @DataProvider supplies data to test methods."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you handle mocking and stubbing in E2E tests?",
-    "Answer": "Mocking/stubbing is done using libraries like WireMock or Sinon to simulate backend responses and reduce external dependencies."
+    "topic": "TestNG",
+    "question": "Explain the usage of DataProvider with a real-world example.",
+    "answer": "DataProvider allows parameterization of tests. E.g. testing login with multiple credentials supplied by a method returning Object[][] array."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "What\u2019s your strategy for reporting flaky or intermittent test failures?",
-    "Answer": "Use reporting tools like Allure or track flaky tests in CI pipelines and apply test quarantine or retries with failure thresholds."
+    "topic": "TestNG",
+    "question": "How can you prioritize test methods in TestNG?",
+    "answer": "Use the 'priority' attribute in the @Test annotation, e.g. @Test(priority = 1)."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you perform visual testing or UI regressions in automation?",
-    "Answer": "Visual testing involves tools like Applitools or Percy to detect layout changes and regressions across builds."
+    "topic": "TestNG",
+    "question": "How can you run TestNG tests in parallel, and what are the advantages?",
+    "answer": "Define 'parallel' in testng.xml (methods, classes, tests). It speeds up execution and improves efficiency."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How would you migrate a legacy test suite to a modern automation framework?",
-    "Answer": "Incrementally refactor tests to modern frameworks (e.g. Selenium to Playwright) reuse business logic and migrate step by step while ensuring backward compatibility."
+    "topic": "TestNG",
+    "question": "How do you group test methods in TestNG and why is it useful?",
+    "answer": "Use the 'groups' attribute in @Test to categorize tests. Useful for running specific sets of tests."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you measure test coverage and optimize it in automation?",
-    "Answer": "Measure coverage using tools like Jacoco (Java) Istanbul (JS/TS) or Codecov and focus on critical path and boundary test cases."
+    "topic": "TestNG",
+    "question": "How to manage data-driven testing and how can you implement it using a DataProvider?",
+    "answer": "Implement a method annotated with @DataProvider that returns test data. Link it to the test method using dataProvider attribute."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you version-control test scripts and share reusable modules across teams?",
-    "Answer": "Use Git for version control organize reusable modules in libraries and leverage submodules or shared packages across repositories."
+    "topic": "TestNG",
+    "question": "What are dependencies in TestNG and how do you define them?",
+    "answer": "Use 'dependsOnMethods' or 'dependsOnGroups' to define test execution order based on dependencies."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "Explain your debugging approach when tests fail on CI but pass locally.",
-    "Answer": "Debug using logs screenshots network traces running tests locally with CI configurations and isolating environment differences."
+    "topic": "TestNG",
+    "question": "What is TestNG, and how does it differ from JUnit?",
+    "answer": "TestNG is a testing framework inspired by JUnit but more powerful, offering features like parallel testing test grouping and flexible test configuration."
   },
   {
-    "Topic": "Test Automation Frameworks",
-    "Question": "How do you design a test framework that supports multi-language/platform testing?",
-    "Answer": "Design language-agnostic APIs or drivers abstract test logic and build a common layer to support multiple platforms (web mobile)."
+    "topic": "TestNG",
+    "question": "What is the purpose of @Listeners annotation in TestNG and how do you use it?",
+    "answer": "Listeners provide hooks for test events like start success or failure. Implement ITestListener and annotate with @Listeners."
   }
 ]
