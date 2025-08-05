@@ -22,32 +22,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Populate topic dropdown
 function populateTopics() {
-  const topicFilter = document.getElementById('topicFilter');
-  const topics = [...new Set(flashcards.map(card => card.topic))];
-  topics.sort();
+  const container = document.getElementById('topicCheckboxes');
+  const topics = [...new Set(flashcards.map(card => card.topic))].sort();
 
-  topicFilter.innerHTML = '<option value="All">All Topics</option>';
+  // Add "All Topics" checkbox
+  const allCheckbox = document.createElement('input');
+  allCheckbox.type = 'checkbox';
+  allCheckbox.id = 'allTopics';
+  allCheckbox.checked = true;
+
+  const allLabel = document.createElement('label');
+  allLabel.htmlFor = 'allTopics';
+  allLabel.textContent = 'All Topics';
+
+  container.appendChild(allCheckbox);
+  container.appendChild(allLabel);
+  container.appendChild(document.createElement('br'));
+
+  // Add individual topic checkboxes
   topics.forEach(topic => {
-    const option = document.createElement('option');
-    option.value = topic;
-    option.textContent = topic;
-    topicFilter.appendChild(option);
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.value = topic;
+    checkbox.className = 'topicCheckbox';
+
+    const label = document.createElement('label');
+    label.textContent = topic;
+
+    container.appendChild(checkbox);
+    container.appendChild(label);
+    container.appendChild(document.createElement('br'));
   });
 
-  topicFilter.addEventListener('change', () => {
-    currentTopic = topicFilter.value;
+  container.addEventListener('change', (e) => {
+    const target = e.target;
+  
+    if (target.id === 'allTopics') {
+      // If "All Topics" is checked, uncheck all individual topics
+      if (target.checked) {
+        document.querySelectorAll('.topicCheckbox').forEach(cb => cb.checked = false);
+      }
+    } else {
+      // If any topic checkbox is checked, uncheck "All Topics"
+      document.getElementById('allTopics').checked = false;
+    }
+  
     currentCardIndex = 0;
     showCard(0);
   });
+  
 }
 
-// Filter flashcards by topic
 function getFilteredFlashcards() {
-  return currentTopic === 'All'
-    ? flashcards
-    : flashcards.filter(card => card.topic === currentTopic);
+  const allChecked = document.getElementById('allTopics').checked;
+
+  if (allChecked) return flashcards;
+
+  const selectedTopics = Array.from(document.querySelectorAll('.topicCheckbox:checked'))
+    .map(cb => cb.value);
+
+  return flashcards.filter(card => selectedTopics.includes(card.topic));
 }
 
 // Show a specific flashcard

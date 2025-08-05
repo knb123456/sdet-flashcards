@@ -41,6 +41,38 @@ a:hover {
   text-decoration: underline;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.filter-container select {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .filter-container label {
+    margin-right: 0;
+  }
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   body {
@@ -66,4 +98,5 @@ a:hover {
   a {
     color: #66b2ff;
   }
+
 }

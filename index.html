@@ -7,19 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="topicSelection"></div>
+  <header>
+    <h1>SDET Flashcards</h1>
+  </header>
 
-  <div id="flashcardContainer">
-    <div class="card">
-      <p id="question">Loading flashcards...</p>
-      <p id="answer" style="display: none;"></p>
-      <button id="showAnswerBtn">Show Answer</button>
-      <button id="nextBtn">Next</button>
-      <button id="prevBtn">Previous</button>
+  <!-- Topic Filter -->
+  <div class="filter-container">
+    <label for="topicFilter">Filter by Topic:</label>
+    <label><strong>Filter by Topic:</strong></label>
+    <div id="topicCheckboxes"></div>
+  </div>
+
+  <!-- Flashcard Container -->
+  <div class="flashcard-container">
+    <div class="flashcard">
+      <div id="question" class="flashcard-question">Loading...</div>
+      <div id="answer" class="flashcard-answer"></div>
     </div>
-  
-    <p><a href="#" id="changeTopicsLink">Change Topics</a></p>
-    <p><a href="https://knb123456.github.io/sdet-flashcards/sdet-flashcards-admin/admin.html" target="_blank">Modify Questions</a></p>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="prevBtn">Previous</button>
+    <button id="showAnswerBtn">Show Answer</button>
+    <button id="nextBtn">Next</button>
   </div>
 
   <script src="script.js"></script>
