@@ -42,7 +42,7 @@ a:hover {
 }
 
 .filter-container {
-  display: flex;
+  display: none;  /* hide by default */
   justify-content: center;
   align-items: center;
   margin: 15px 0;

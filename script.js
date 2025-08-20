@@ -22,6 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.getElementById("filterToggleBtn").addEventListener("click", () => {
+  const filterContainer = document.getElementById("filterContainer");
+  filterContainer.style.display =
+    filterContainer.style.display === "none" || filterContainer.style.display === ""
+      ? "flex"
+      : "none";
+});
+
+
 function populateTopics() {
   const container = document.getElementById('topicCheckboxes');
   const topics = [...new Set(flashcards.map(card => card.topic))].sort();
