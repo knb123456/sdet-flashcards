@@ -588,5 +588,365 @@
     "topic": "TestNG",
     "question": "What is the purpose of @Listeners annotation in TestNG and how do you use it?",
     "answer": "Listeners provide hooks for test events like start success or failure. Implement ITestListener and annotate with @Listeners."
-  }
-]
+  },
+    {
+      "topic": "Angular",
+      "question": "What is Angular 19, and how is it different from earlier Angular versions?",
+      "answer": "Angular 19 is the latest major release of the Angular framework (2025). It emphasizes developer experience improvements, signals API maturity, and enhanced performance. Compared to earlier versions, Angular 19 builds on standalone components (no need for NgModules), strengthens RxJS interop with signals, and improves tooling with stricter TypeScript integration."
+    },
+    {
+      "topic": "Angular",
+      "question": "What are Angular signals, and why are they important?",
+      "answer": "Signals are a reactive state management system introduced in Angular 16 and matured in Angular 19. They provide a simpler, more predictable alternative to RxJS observables for managing reactive state. Signals are synchronous, track dependencies automatically, and reduce boilerplate compared to subjects or services."
+    },
+    {
+      "topic": "Angular",
+      "question": "What are standalone components in Angular, and how do they simplify applications?",
+      "answer": "Standalone components allow developers to create components without NgModules. They declare their own dependencies and can be imported directly. This simplifies application structure, reduces boilerplate, and aligns Angular more closely with other modern frameworks like React or Vue."
+    },
+    {
+      "topic": "Angular",
+      "question": "How does Angular's change detection work with signals?",
+      "answer": "With signals, Angular change detection is more fine-grained. Instead of traversing the full component tree, Angular tracks dependencies at the signal level. When a signal changes, only components using it are re-rendered. This improves performance compared to the traditional zone.js change detection model."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test Angular components that use signals?",
+      "answer": "When testing components that use signals, you can update signals directly in tests and assert DOM updates. Angular’s testing utilities allow creating test harnesses where signals are set and the component automatically re-renders. For asynchronous behavior, fakeAsync or waitForAsync can still be used."
+    },
+    {
+      "topic": "Angular",
+      "question": "What’s new in Angular 19 routing?",
+      "answer": "Angular 19 continues to improve on functional routing APIs. Routes can be defined using functions rather than arrays of objects, and lazy loading works directly with standalone components. This makes routing definitions more type-safe and reduces boilerplate."
+    },
+    {
+      "topic": "Angular",
+      "question": "How does dependency injection work with standalone components?",
+      "answer": "Standalone components declare their own providers using the 'providers' property. Angular's hierarchical DI system still applies, but with standalone components you can scope services more easily without needing an NgModule."
+    },
+    {
+      "topic": "Angular",
+      "question": "What tools are typically used for testing Angular 19 applications?",
+      "answer": "Popular tools include Jasmine or Jest for unit testing, TestBed for Angular-specific utilities, and Angular Testing Library for DOM-focused tests. Playwright or Cypress are often used for end-to-end testing."
+    },
+    {
+      "topic": "Angular",
+      "question": "How does Angular 19 improve performance?",
+      "answer": "Angular 19 improves performance with signal-based reactivity, tree-shakable APIs, faster hydration for server-side rendering, and reduced change detection overhead. This makes large-scale applications more responsive."
+    },
+    {
+      "topic": "Angular",
+      "question": "What are best practices for writing testable Angular 19 code?",
+      "answer": "Best practices include: using dependency injection for testability, preferring signals for state management, writing pure components without side effects, mocking services in unit tests, and covering critical flows with e2e tests using tools like Playwright or Cypress."
+    },
+  {
+    "topic": "Angular",
+    "question": "How do you configure TestBed for a component that uses standalone APIs?",
+    "answer": "Use TestBed.configureTestingModule({ imports: [ComponentUnderTest] }) and then TestBed.createComponent(ComponentUnderTest). Include any standalone dependencies (e.g., RouterTestingModule, HttpClientTestingModule) in imports. Provide mocks in the providers array as needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is the purpose of HttpClientTestingModule and HttpTestingController?",
+    "answer": "HttpClientTestingModule replaces real HTTP with a testing backend. HttpTestingController lets you expect specific requests, assert method/URL/headers, and flush mock responses, ensuring no unexpected requests remain after the test."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you mock a service in Angular unit tests?",
+    "answer": "Provide a mock in TestBed: providers: [{ provide: RealService, useValue: mock }]. For partial mocks use jasmine.createSpyObj or jest.fn(). Alternatively, use useClass with a lightweight fake class."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is ComponentFixture and why is it important?",
+    "answer": "ComponentFixture wraps the created component instance and its native DOM. It provides detectChanges() to trigger change detection, debugElement for querying, and utilities to interact with the component template in tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "When should you use fakeAsync/tick vs waitForAsync?",
+    "answer": "Use fakeAsync/tick to control microtasks/macrotasks synchronously (e.g., timers, promises) and precisely advance time. Use waitForAsync when you want Angular to resolve async operations automatically and then continue assertions in a then/callback."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test components that use Angular signals?",
+    "answer": "Update the signal value directly in the test (e.g., count.set(5)), call fixture.detectChanges(), and assert the DOM. For computed signals, set dependencies and verify recomputation. Avoid flushing zones unless async work is present."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test an Angular pipe?",
+    "answer": "Instantiate the pipe class directly and call transform() with inputs, or declare the pipe in TestBed and use it within a host component template to verify integration."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test route guards?",
+    "answer": "Use RouterTestingModule and provide the guard. Create mocks for dependencies like AuthService. Call canActivate/canMatch directly with a mocked ActivatedRouteSnapshot/RouterStateSnapshot and assert returned boolean/UrlTree/observable."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test HTTP interceptors?",
+    "answer": "Provide the interceptor using HTTP_INTERCEPTORS in TestBed along with HttpClientTestingModule. Make a request via HttpClient, expect it with HttpTestingController, verify the interceptor’s header/URL/logic effects, and flush the response."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test routing with standalone components and lazy loading?",
+    "answer": "Use RouterTestingModule.withRoutes([...]) pointing to standalone components. Create the router via TestBed.inject(Router), initialize navigation with router.navigateByUrl('/path'), then fixture.detectChanges() and assert the rendered component."
+  },
+  {
+    "topic": "Angular",
+    "question": "What strategies help make Angular code more testable?",
+    "answer": "Isolate logic into services, use DI for external dependencies, keep components presentational where possible, avoid side effects in constructors, and prefer signals/inputs/outputs over hidden state. Write small, focused units."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test Output event emitters?",
+    "answer": "Subscribe to the EventEmitter or spy on emit, trigger the UI action, call fixture.detectChanges(), and assert that emit was called with the expected payload."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test forms (Reactive Forms)?",
+    "answer": "Initialize the form in the test, set control values programmatically, trigger valueChanges if needed, and assert form.valid/errors. Interact with inputs via the template and dispatch input events to simulate user behavior."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you stub ActivatedRoute data and params?",
+    "answer": "Provide ActivatedRoute with a custom object: { provide: ActivatedRoute, useValue: { paramMap: of(convertToParamMap({...})), snapshot: { data: {...} }, data: of({...}) } } and update observables as needed during tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is Angular Testing Library and when would you use it?",
+    "answer": "Angular Testing Library encourages tests focused on user interactions and accessible queries (getByRole, getByLabelText). Use it to reduce coupling to implementation details and improve test resilience."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test DOM queries effectively without brittle selectors?",
+    "answer": "Prefer accessible queries (role, label, placeholder, text). Use data-testid only when necessary. Avoid deep CSS selectors tied to layout. Assert on visible text and roles to mimic user perspective."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test error handling in services using HttpClient?",
+    "answer": "Expect the request and flush with an error: req.flush({ message: 'fail' }, { status: 500, statusText: 'Server Error' }); then assert your service maps or rethrows errors as designed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you set up Jest instead of Jasmine/Karma for Angular unit tests?",
+    "answer": "Use a Jest preset (e.g., preset Angular builders) or configure ts-jest/swc. Update test scripts, add jest.config, and swap TestBed test patterns as-is. Ensure zone.js test support and polyfills are loaded if needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a directive that manipulates host element behavior?",
+    "answer": "Create a host test component applying the directive, render with TestBed, interact with the host element, and assert attribute/class/style changes or event handling."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is the role of TestHarnesses (Angular CDK) and when should you use them?",
+    "answer": "Harnesses provide stable APIs to interact with Angular Material/CDK components in tests, shielding you from DOM structure changes. Use them for robust, maintainable component tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test an async initialization path (e.g., data loaded in ngOnInit)?",
+    "answer": "Mock the async dependency (service returning observable/promise), trigger ngOnInit via fixture.detectChanges(), flush microtasks (fakeAsync/tick or waitForAsync), then assert DOM updates."
+  },
+  {
+    "topic": "Angular",
+    "question": "What are good patterns for testing components that consume signals derived from HTTP data?",
+    "answer": "Mock the service to emit test data, set the backing signal or flush the HTTP request, call fixture.detectChanges(), and assert the computed signal’s output in the template. Verify update paths by changing the source signal and reasserting."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you structure e2e tests with Playwright for an Angular app?",
+    "answer": "Use page object helpers for key flows, rely on accessible selectors, mock network calls where appropriate, run tests headless in CI, and gate merges with smoke e2e covering auth, navigation, and critical CRUD paths."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you handle flaky tests in Angular projects?",
+    "answer": "Remove unnecessary async waits, rely on deterministic selectors, mock non-deterministic services (timers/network), avoid race conditions by awaiting UI stabilization, and minimize global state shared across tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "How can you test performance-sensitive components?",
+    "answer": "Write micro-benchmarks for heavy functions, prefer signal-driven updates for minimal change detection, and create tests that simulate large datasets while asserting render counts or using spies on expensive methods."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a component that uses the RouterLink and RouterOutlet?",
+    "answer": "Import RouterTestingModule, declare routes mapping to test components, render the component, click links with user-like events, call fixture.detectChanges(), and assert the new component appears via the outlet."
+  },
+  {
+    "topic": "Angular",
+    "question": "What considerations apply to testing server-side rendering (SSR) behaviors?",
+    "answer": "Avoid direct window/document access in components; abstract them via injection tokens. In tests, mock platform checks and verify code paths don’t rely on browser-only APIs to ensure SSR safety."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you stub environment configuration values in tests?",
+    "answer": "Use DI tokens for configuration and provide different values in TestBed. For code importing environment directly, refactor to inject a config token so tests can supply overrides cleanly."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a component that uses Content Projection (ng-content)?",
+    "answer": "Create a host test component that projects desired test content into the component under test, then assert that the projected content renders and interacts as expected."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test components that use OnPush change detection?",
+    "answer": "Trigger change detection deliberately after input/signal changes (fixture.detectChanges()). For inputs, set component.input = value; for signals, set them and then detect changes. Ensure tests update references rather than mutating in place when needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you verify no unexpected HTTP calls remain during a test?",
+    "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
+  },
+    {
+      "topic": "Angular",
+      "question": "How do you configure TestBed for a component that uses standalone APIs?",
+      "answer": "Use TestBed.configureTestingModule({ imports: [ComponentUnderTest] }) and then TestBed.createComponent(ComponentUnderTest). Include any standalone dependencies (e.g., RouterTestingModule, HttpClientTestingModule) in imports. Provide mocks in the providers array as needed."
+    },
+    {
+      "topic": "Angular",
+      "question": "What is the purpose of HttpClientTestingModule and HttpTestingController?",
+      "answer": "HttpClientTestingModule replaces real HTTP with a testing backend. HttpTestingController lets you expect specific requests, assert method/URL/headers, and flush mock responses, ensuring no unexpected requests remain after the test."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you mock a service in Angular unit tests?",
+      "answer": "Provide a mock in TestBed: providers: [{ provide: RealService, useValue: mock }]. For partial mocks use jasmine.createSpyObj or jest.fn(). Alternatively, use useClass with a lightweight fake class."
+    },
+    {
+      "topic": "Angular",
+      "question": "What is ComponentFixture and why is it important?",
+      "answer": "ComponentFixture wraps the created component instance and its native DOM. It provides detectChanges() to trigger change detection, debugElement for querying, and utilities to interact with the component template in tests."
+    },
+    {
+      "topic": "Angular",
+      "question": "When should you use fakeAsync/tick vs waitForAsync?",
+      "answer": "Use fakeAsync/tick to control microtasks/macrotasks synchronously (e.g., timers, promises) and precisely advance time. Use waitForAsync when you want Angular to resolve async operations automatically and then continue assertions in a then/callback."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test components that use Angular signals?",
+      "answer": "Update the signal value directly in the test (e.g., count.set(5)), call fixture.detectChanges(), and assert the DOM. For computed signals, set dependencies and verify recomputation. Avoid flushing zones unless async work is present."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test an Angular pipe?",
+      "answer": "Instantiate the pipe class directly and call transform() with inputs, or declare the pipe in TestBed and use it within a host component template to verify integration."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test route guards?",
+      "answer": "Use RouterTestingModule and provide the guard. Create mocks for dependencies like AuthService. Call canActivate/canMatch directly with a mocked ActivatedRouteSnapshot/RouterStateSnapshot and assert returned boolean/UrlTree/observable."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test HTTP interceptors?",
+      "answer": "Provide the interceptor using HTTP_INTERCEPTORS in TestBed along with HttpClientTestingModule. Make a request via HttpClient, expect it with HttpTestingController, verify the interceptor’s header/URL/logic effects, and flush the response."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test routing with standalone components and lazy loading?",
+      "answer": "Use RouterTestingModule.withRoutes([...]) pointing to standalone components. Create the router via TestBed.inject(Router), initialize navigation with router.navigateByUrl('/path'), then fixture.detectChanges() and assert the rendered component."
+    },
+    {
+      "topic": "Angular",
+      "question": "What strategies help make Angular code more testable?",
+      "answer": "Isolate logic into services, use DI for external dependencies, keep components presentational where possible, avoid side effects in constructors, and prefer signals/inputs/outputs over hidden state. Write small, focused units."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test Output event emitters?",
+      "answer": "Subscribe to the EventEmitter or spy on emit, trigger the UI action, call fixture.detectChanges(), and assert that emit was called with the expected payload."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test forms (Reactive Forms)?",
+      "answer": "Initialize the form in the test, set control values programmatically, trigger valueChanges if needed, and assert form.valid/errors. Interact with inputs via the template and dispatch input events to simulate user behavior."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you stub ActivatedRoute data and params?",
+      "answer": "Provide ActivatedRoute with a custom object: { provide: ActivatedRoute, useValue: { paramMap: of(convertToParamMap({...})), snapshot: { data: {...} }, data: of({...}) } } and update observables as needed during tests."
+    },
+    {
+      "topic": "Angular",
+      "question": "What is Angular Testing Library and when would you use it?",
+      "answer": "Angular Testing Library encourages tests focused on user interactions and accessible queries (getByRole, getByLabelText). Use it to reduce coupling to implementation details and improve test resilience."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test DOM queries effectively without brittle selectors?",
+      "answer": "Prefer accessible queries (role, label, placeholder, text). Use data-testid only when necessary. Avoid deep CSS selectors tied to layout. Assert on visible text and roles to mimic user perspective."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test error handling in services using HttpClient?",
+      "answer": "Expect the request and flush with an error: req.flush({ message: 'fail' }, { status: 500, statusText: 'Server Error' }); then assert your service maps or rethrows errors as designed."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you set up Jest instead of Jasmine/Karma for Angular unit tests?",
+      "answer": "Use a Jest preset (e.g., preset Angular builders) or configure ts-jest/swc. Update test scripts, add jest.config, and swap TestBed test patterns as-is. Ensure zone.js test support and polyfills are loaded if needed."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test a directive that manipulates host element behavior?",
+      "answer": "Create a host test component applying the directive, render with TestBed, interact with the host element, and assert attribute/class/style changes or event handling."
+    },
+    {
+      "topic": "Angular",
+      "question": "What is the role of TestHarnesses (Angular CDK) and when should you use them?",
+      "answer": "Harnesses provide stable APIs to interact with Angular Material/CDK components in tests, shielding you from DOM structure changes. Use them for robust, maintainable component tests."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test an async initialization path (e.g., data loaded in ngOnInit)?",
+      "answer": "Mock the async dependency (service returning observable/promise), trigger ngOnInit via fixture.detectChanges(), flush microtasks (fakeAsync/tick or waitForAsync), then assert DOM updates."
+    },
+    {
+      "topic": "Angular",
+      "question": "What are good patterns for testing components that consume signals derived from HTTP data?",
+      "answer": "Mock the service to emit test data, set the backing signal or flush the HTTP request, call fixture.detectChanges(), and assert the computed signal’s output in the template. Verify update paths by changing the source signal and reasserting."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you structure e2e tests with Playwright for an Angular app?",
+      "answer": "Use page object helpers for key flows, rely on accessible selectors, mock network calls where appropriate, run tests headless in CI, and gate merges with smoke e2e covering auth, navigation, and critical CRUD paths."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you handle flaky tests in Angular projects?",
+      "answer": "Remove unnecessary async waits, rely on deterministic selectors, mock non-deterministic services (timers/network), avoid race conditions by awaiting UI stabilization, and minimize global state shared across tests."
+    },
+    {
+      "topic": "Angular",
+      "question": "How can you test performance-sensitive components?",
+      "answer": "Write micro-benchmarks for heavy functions, prefer signal-driven updates for minimal change detection, and create tests that simulate large datasets while asserting render counts or using spies on expensive methods."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test a component that uses the RouterLink and RouterOutlet?",
+      "answer": "Import RouterTestingModule, declare routes mapping to test components, render the component, click links with user-like events, call fixture.detectChanges(), and assert the new component appears via the outlet."
+    },
+    {
+      "topic": "Angular",
+      "question": "What considerations apply to testing server-side rendering (SSR) behaviors?",
+      "answer": "Avoid direct window/document access in components; abstract them via injection tokens. In tests, mock platform checks and verify code paths don’t rely on browser-only APIs to ensure SSR safety."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you stub environment configuration values in tests?",
+      "answer": "Use DI tokens for configuration and provide different values in TestBed. For code importing environment directly, refactor to inject a config token so tests can supply overrides cleanly."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test a component that uses Content Projection (ng-content)?",
+      "answer": "Create a host test component that projects desired test content into the component under test, then assert that the projected content renders and interacts as expected."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you test components that use OnPush change detection?",
+      "answer": "Trigger change detection deliberately after input/signal changes (fixture.detectChanges()). For inputs, set component.input = value; for signals, set them and then detect changes. Ensure tests update references rather than mutating in place when needed."
+    },
+    {
+      "topic": "Angular",
+      "question": "How do you verify no unexpected HTTP calls remain during a test?",
+      "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
+    }
+  ]
