@@ -432,7 +432,7 @@
   {
     "topic": "Test Automation Frameworks",
     "question": "How do you implement retries test dependencies and soft assertions?",
-    "answer": "Use built-in retry mechanisms (TestNG\u2019s retry analyzer Playwright retries) manage dependencies carefully and apply soft assertions (e.g. AssertJ Chai) to collect multiple failures in one run."
+    "answer": "Use built-in retry mechanisms (TestNG’s retry analyzer Playwright retries) manage dependencies carefully and apply soft assertions (e.g. AssertJ Chai) to collect multiple failures in one run."
   },
   {
     "topic": "Test Automation Frameworks",
@@ -441,7 +441,7 @@
   },
   {
     "topic": "Test Automation Frameworks",
-    "question": "How do you manage test data for automation\u2014hardcoded factories or external files?",
+    "question": "How do you manage test data for automation—hardcoded factories or external files?",
     "answer": "Prefer external files (JSON CSV databases) or data factories over hardcoding to ensure flexibility and scalability in managing test data."
   },
   {
@@ -467,7 +467,7 @@
   {
     "topic": "Test Automation Frameworks",
     "question": "How would you handle dynamic web elements (changing IDs AJAX content)?",
-    "answer": "Use dynamic locators (XPath with contains or starts-with) indexing strategies and wait conditions (Playwright auto-wait Selenium\u2019s ExpectedConditions)."
+    "answer": "Use dynamic locators (XPath with contains or starts-with) indexing strategies and wait conditions (Playwright auto-wait Selenium’s ExpectedConditions)."
   },
   {
     "topic": "Test Automation Frameworks",
@@ -526,17 +526,17 @@
   },
   {
     "topic": "Test Automation Frameworks",
-    "question": "What\u2019s the role of Page Object Model vs Screenplay Pattern in automation frameworks?",
+    "question": "What’s the role of Page Object Model vs Screenplay Pattern in automation frameworks?",
     "answer": "POM focuses on page abstractions while Screenplay emphasizes actor-centric interactions and tasks improving readability and reusability in larger projects."
   },
   {
     "topic": "Test Automation Frameworks",
-    "question": "What\u2019s your approach to integrating API and UI tests within the same framework?",
+    "question": "What’s your approach to integrating API and UI tests within the same framework?",
     "answer": "Build a hybrid framework that combines API validation with UI workflows to ensure both layers are tested in the same pipeline."
   },
   {
     "topic": "Test Automation Frameworks",
-    "question": "What\u2019s your strategy for reporting flaky or intermittent test failures?",
+    "question": "What’s your strategy for reporting flaky or intermittent test failures?",
     "answer": "Use reporting tools like Allure or track flaky tests in CI pipelines and apply test quarantine or retries with failure thresholds."
   },
   {
@@ -589,56 +589,56 @@
     "question": "What is the purpose of @Listeners annotation in TestNG and how do you use it?",
     "answer": "Listeners provide hooks for test events like start success or failure. Implement ITestListener and annotate with @Listeners."
   },
-    {
-      "topic": "Angular",
-      "question": "What is Angular 19, and how is it different from earlier Angular versions?",
-      "answer": "Angular 19 is the latest major release of the Angular framework (2025). It emphasizes developer experience improvements, signals API maturity, and enhanced performance. Compared to earlier versions, Angular 19 builds on standalone components (no need for NgModules), strengthens RxJS interop with signals, and improves tooling with stricter TypeScript integration."
-    },
-    {
-      "topic": "Angular",
-      "question": "What are Angular signals, and why are they important?",
-      "answer": "Signals are a reactive state management system introduced in Angular 16 and matured in Angular 19. They provide a simpler, more predictable alternative to RxJS observables for managing reactive state. Signals are synchronous, track dependencies automatically, and reduce boilerplate compared to subjects or services."
-    },
-    {
-      "topic": "Angular",
-      "question": "What are standalone components in Angular, and how do they simplify applications?",
-      "answer": "Standalone components allow developers to create components without NgModules. They declare their own dependencies and can be imported directly. This simplifies application structure, reduces boilerplate, and aligns Angular more closely with other modern frameworks like React or Vue."
-    },
-    {
-      "topic": "Angular",
-      "question": "How does Angular's change detection work with signals?",
-      "answer": "With signals, Angular change detection is more fine-grained. Instead of traversing the full component tree, Angular tracks dependencies at the signal level. When a signal changes, only components using it are re-rendered. This improves performance compared to the traditional zone.js change detection model."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test Angular components that use signals?",
-      "answer": "When testing components that use signals, you can update signals directly in tests and assert DOM updates. Angular’s testing utilities allow creating test harnesses where signals are set and the component automatically re-renders. For asynchronous behavior, fakeAsync or waitForAsync can still be used."
-    },
-    {
-      "topic": "Angular",
-      "question": "What’s new in Angular 19 routing?",
-      "answer": "Angular 19 continues to improve on functional routing APIs. Routes can be defined using functions rather than arrays of objects, and lazy loading works directly with standalone components. This makes routing definitions more type-safe and reduces boilerplate."
-    },
-    {
-      "topic": "Angular",
-      "question": "How does dependency injection work with standalone components?",
-      "answer": "Standalone components declare their own providers using the 'providers' property. Angular's hierarchical DI system still applies, but with standalone components you can scope services more easily without needing an NgModule."
-    },
-    {
-      "topic": "Angular",
-      "question": "What tools are typically used for testing Angular 19 applications?",
-      "answer": "Popular tools include Jasmine or Jest for unit testing, TestBed for Angular-specific utilities, and Angular Testing Library for DOM-focused tests. Playwright or Cypress are often used for end-to-end testing."
-    },
-    {
-      "topic": "Angular",
-      "question": "How does Angular 19 improve performance?",
-      "answer": "Angular 19 improves performance with signal-based reactivity, tree-shakable APIs, faster hydration for server-side rendering, and reduced change detection overhead. This makes large-scale applications more responsive."
-    },
-    {
-      "topic": "Angular",
-      "question": "What are best practices for writing testable Angular 19 code?",
-      "answer": "Best practices include: using dependency injection for testability, preferring signals for state management, writing pure components without side effects, mocking services in unit tests, and covering critical flows with e2e tests using tools like Playwright or Cypress."
-    },
+  {
+    "topic": "Angular",
+    "question": "What is Angular 19, and how is it different from earlier Angular versions?",
+    "answer": "Angular 19 is the latest major release of the Angular framework (2025). It emphasizes developer experience improvements, signals API maturity, and enhanced performance. Compared to earlier versions, Angular 19 builds on standalone components (no need for NgModules), strengthens RxJS interop with signals, and improves tooling with stricter TypeScript integration."
+  },
+  {
+    "topic": "Angular",
+    "question": "What are Angular signals, and why are they important?",
+    "answer": "Signals are a reactive state management system introduced in Angular 16 and matured in Angular 19. They provide a simpler, more predictable alternative to RxJS observables for managing reactive state. Signals are synchronous, track dependencies automatically, and reduce boilerplate compared to subjects or services."
+  },
+  {
+    "topic": "Angular",
+    "question": "What are standalone components in Angular, and how do they simplify applications?",
+    "answer": "Standalone components allow developers to create components without NgModules. They declare their own dependencies and can be imported directly. This simplifies application structure, reduces boilerplate, and aligns Angular more closely with other modern frameworks like React or Vue."
+  },
+  {
+    "topic": "Angular",
+    "question": "How does Angular's change detection work with signals?",
+    "answer": "With signals, Angular change detection is more fine-grained. Instead of traversing the full component tree, Angular tracks dependencies at the signal level. When a signal changes, only components using it are re-rendered. This improves performance compared to the traditional zone.js change detection model."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test Angular components that use signals?",
+    "answer": "When testing components that use signals, you can update signals directly in tests and assert DOM updates. Angular’s testing utilities allow creating test harnesses where signals are set and the component automatically re-renders. For asynchronous behavior, fakeAsync or waitForAsync can still be used."
+  },
+  {
+    "topic": "Angular",
+    "question": "What’s new in Angular 19 routing?",
+    "answer": "Angular 19 continues to improve on functional routing APIs. Routes can be defined using functions rather than arrays of objects, and lazy loading works directly with standalone components. This makes routing definitions more type-safe and reduces boilerplate."
+  },
+  {
+    "topic": "Angular",
+    "question": "How does dependency injection work with standalone components?",
+    "answer": "Standalone components declare their own providers using the 'providers' property. Angular's hierarchical DI system still applies, but with standalone components you can scope services more easily without needing an NgModule."
+  },
+  {
+    "topic": "Angular",
+    "question": "What tools are typically used for testing Angular 19 applications?",
+    "answer": "Popular tools include Jasmine or Jest for unit testing, TestBed for Angular-specific utilities, and Angular Testing Library for DOM-focused tests. Playwright or Cypress are often used for end-to-end testing."
+  },
+  {
+    "topic": "Angular",
+    "question": "How does Angular 19 improve performance?",
+    "answer": "Angular 19 improves performance with signal-based reactivity, tree-shakable APIs, faster hydration for server-side rendering, and reduced change detection overhead. This makes large-scale applications more responsive."
+  },
+  {
+    "topic": "Angular",
+    "question": "What are best practices for writing testable Angular 19 code?",
+    "answer": "Best practices include: using dependency injection for testability, preferring signals for state management, writing pure components without side effects, mocking services in unit tests, and covering critical flows with e2e tests using tools like Playwright or Cypress."
+  },
   {
     "topic": "Angular",
     "question": "How do you configure TestBed for a component that uses standalone APIs?",
@@ -794,169 +794,244 @@
     "question": "How do you verify no unexpected HTTP calls remain during a test?",
     "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
   },
-    {
-      "topic": "Angular",
-      "question": "How do you configure TestBed for a component that uses standalone APIs?",
-      "answer": "Use TestBed.configureTestingModule({ imports: [ComponentUnderTest] }) and then TestBed.createComponent(ComponentUnderTest). Include any standalone dependencies (e.g., RouterTestingModule, HttpClientTestingModule) in imports. Provide mocks in the providers array as needed."
-    },
-    {
-      "topic": "Angular",
-      "question": "What is the purpose of HttpClientTestingModule and HttpTestingController?",
-      "answer": "HttpClientTestingModule replaces real HTTP with a testing backend. HttpTestingController lets you expect specific requests, assert method/URL/headers, and flush mock responses, ensuring no unexpected requests remain after the test."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you mock a service in Angular unit tests?",
-      "answer": "Provide a mock in TestBed: providers: [{ provide: RealService, useValue: mock }]. For partial mocks use jasmine.createSpyObj or jest.fn(). Alternatively, use useClass with a lightweight fake class."
-    },
-    {
-      "topic": "Angular",
-      "question": "What is ComponentFixture and why is it important?",
-      "answer": "ComponentFixture wraps the created component instance and its native DOM. It provides detectChanges() to trigger change detection, debugElement for querying, and utilities to interact with the component template in tests."
-    },
-    {
-      "topic": "Angular",
-      "question": "When should you use fakeAsync/tick vs waitForAsync?",
-      "answer": "Use fakeAsync/tick to control microtasks/macrotasks synchronously (e.g., timers, promises) and precisely advance time. Use waitForAsync when you want Angular to resolve async operations automatically and then continue assertions in a then/callback."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test components that use Angular signals?",
-      "answer": "Update the signal value directly in the test (e.g., count.set(5)), call fixture.detectChanges(), and assert the DOM. For computed signals, set dependencies and verify recomputation. Avoid flushing zones unless async work is present."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test an Angular pipe?",
-      "answer": "Instantiate the pipe class directly and call transform() with inputs, or declare the pipe in TestBed and use it within a host component template to verify integration."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test route guards?",
-      "answer": "Use RouterTestingModule and provide the guard. Create mocks for dependencies like AuthService. Call canActivate/canMatch directly with a mocked ActivatedRouteSnapshot/RouterStateSnapshot and assert returned boolean/UrlTree/observable."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test HTTP interceptors?",
-      "answer": "Provide the interceptor using HTTP_INTERCEPTORS in TestBed along with HttpClientTestingModule. Make a request via HttpClient, expect it with HttpTestingController, verify the interceptor’s header/URL/logic effects, and flush the response."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test routing with standalone components and lazy loading?",
-      "answer": "Use RouterTestingModule.withRoutes([...]) pointing to standalone components. Create the router via TestBed.inject(Router), initialize navigation with router.navigateByUrl('/path'), then fixture.detectChanges() and assert the rendered component."
-    },
-    {
-      "topic": "Angular",
-      "question": "What strategies help make Angular code more testable?",
-      "answer": "Isolate logic into services, use DI for external dependencies, keep components presentational where possible, avoid side effects in constructors, and prefer signals/inputs/outputs over hidden state. Write small, focused units."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test Output event emitters?",
-      "answer": "Subscribe to the EventEmitter or spy on emit, trigger the UI action, call fixture.detectChanges(), and assert that emit was called with the expected payload."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test forms (Reactive Forms)?",
-      "answer": "Initialize the form in the test, set control values programmatically, trigger valueChanges if needed, and assert form.valid/errors. Interact with inputs via the template and dispatch input events to simulate user behavior."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you stub ActivatedRoute data and params?",
-      "answer": "Provide ActivatedRoute with a custom object: { provide: ActivatedRoute, useValue: { paramMap: of(convertToParamMap({...})), snapshot: { data: {...} }, data: of({...}) } } and update observables as needed during tests."
-    },
-    {
-      "topic": "Angular",
-      "question": "What is Angular Testing Library and when would you use it?",
-      "answer": "Angular Testing Library encourages tests focused on user interactions and accessible queries (getByRole, getByLabelText). Use it to reduce coupling to implementation details and improve test resilience."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test DOM queries effectively without brittle selectors?",
-      "answer": "Prefer accessible queries (role, label, placeholder, text). Use data-testid only when necessary. Avoid deep CSS selectors tied to layout. Assert on visible text and roles to mimic user perspective."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test error handling in services using HttpClient?",
-      "answer": "Expect the request and flush with an error: req.flush({ message: 'fail' }, { status: 500, statusText: 'Server Error' }); then assert your service maps or rethrows errors as designed."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you set up Jest instead of Jasmine/Karma for Angular unit tests?",
-      "answer": "Use a Jest preset (e.g., preset Angular builders) or configure ts-jest/swc. Update test scripts, add jest.config, and swap TestBed test patterns as-is. Ensure zone.js test support and polyfills are loaded if needed."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test a directive that manipulates host element behavior?",
-      "answer": "Create a host test component applying the directive, render with TestBed, interact with the host element, and assert attribute/class/style changes or event handling."
-    },
-    {
-      "topic": "Angular",
-      "question": "What is the role of TestHarnesses (Angular CDK) and when should you use them?",
-      "answer": "Harnesses provide stable APIs to interact with Angular Material/CDK components in tests, shielding you from DOM structure changes. Use them for robust, maintainable component tests."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test an async initialization path (e.g., data loaded in ngOnInit)?",
-      "answer": "Mock the async dependency (service returning observable/promise), trigger ngOnInit via fixture.detectChanges(), flush microtasks (fakeAsync/tick or waitForAsync), then assert DOM updates."
-    },
-    {
-      "topic": "Angular",
-      "question": "What are good patterns for testing components that consume signals derived from HTTP data?",
-      "answer": "Mock the service to emit test data, set the backing signal or flush the HTTP request, call fixture.detectChanges(), and assert the computed signal’s output in the template. Verify update paths by changing the source signal and reasserting."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you structure e2e tests with Playwright for an Angular app?",
-      "answer": "Use page object helpers for key flows, rely on accessible selectors, mock network calls where appropriate, run tests headless in CI, and gate merges with smoke e2e covering auth, navigation, and critical CRUD paths."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you handle flaky tests in Angular projects?",
-      "answer": "Remove unnecessary async waits, rely on deterministic selectors, mock non-deterministic services (timers/network), avoid race conditions by awaiting UI stabilization, and minimize global state shared across tests."
-    },
-    {
-      "topic": "Angular",
-      "question": "How can you test performance-sensitive components?",
-      "answer": "Write micro-benchmarks for heavy functions, prefer signal-driven updates for minimal change detection, and create tests that simulate large datasets while asserting render counts or using spies on expensive methods."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test a component that uses the RouterLink and RouterOutlet?",
-      "answer": "Import RouterTestingModule, declare routes mapping to test components, render the component, click links with user-like events, call fixture.detectChanges(), and assert the new component appears via the outlet."
-    },
-    {
-      "topic": "Angular",
-      "question": "What considerations apply to testing server-side rendering (SSR) behaviors?",
-      "answer": "Avoid direct window/document access in components; abstract them via injection tokens. In tests, mock platform checks and verify code paths don’t rely on browser-only APIs to ensure SSR safety."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you stub environment configuration values in tests?",
-      "answer": "Use DI tokens for configuration and provide different values in TestBed. For code importing environment directly, refactor to inject a config token so tests can supply overrides cleanly."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test a component that uses Content Projection (ng-content)?",
-      "answer": "Create a host test component that projects desired test content into the component under test, then assert that the projected content renders and interacts as expected."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you test components that use OnPush change detection?",
-      "answer": "Trigger change detection deliberately after input/signal changes (fixture.detectChanges()). For inputs, set component.input = value; for signals, set them and then detect changes. Ensure tests update references rather than mutating in place when needed."
-    },
-    {
-      "topic": "Angular",
-      "question": "How do you verify no unexpected HTTP calls remain during a test?",
-      "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
-    },
-    {
-      "topic": "Interview",
-      "question": "Tell me about a time when you identified a gap in test coverage and implemented a solution.",
-      "answer": "S (Situation): At Net Health, our healthcare application had strong unit test coverage but limited end-to-end automation for critical patient workflows. This created risk around compliance-related features. \n T (Task): I needed to strengthen coverage to ensure we could catch regression defects in workflows critical to patient safety and HIPAA compliance. \n A (Action): I built end-to-end automation using SpecFlow, Selenium, and C#, focusing on high-priority user journeys. I collaborated with product managers to review acceptance criteria and worked with developers to identify high-risk areas.\n R (Result): Test coverage increased significantly, and we caught multiple regression issues before production. This reduced post-release defects by ~30% and improved stakeholder confidence in release quality."
-    },
-    {
-      "topic": "Interview",
-      "question": "Suppose a test in your Playwright framework passes locally but fails consistently in CI. How would you troubleshoot it?",
-      "answer": "S: While working on a TypeScript Playwright framework, we had tests that passed locally but failed intermittently in AWS CodePipeline. \nT: My responsibility was to stabilize these tests and ensure reliable CI results. \nA: I reviewed CI logs and realized environment timing was different than local runs. I added explicit waits and better locators, containerized the tests using Docker, and introduced retries only for known flaky network calls. I also added debug screenshots/videos in Playwright to diagnose future failures. \nR: The CI pipeline stabilized, with test flakiness dropping by 70%. Developers trusted automation more, and the release cycle became smoother."
-    }
-  ]
+  {
+    "topic": "Angular",
+    "question": "How do you configure TestBed for a component that uses standalone APIs?",
+    "answer": "Use TestBed.configureTestingModule({ imports: [ComponentUnderTest] }) and then TestBed.createComponent(ComponentUnderTest). Include any standalone dependencies (e.g., RouterTestingModule, HttpClientTestingModule) in imports. Provide mocks in the providers array as needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is the purpose of HttpClientTestingModule and HttpTestingController?",
+    "answer": "HttpClientTestingModule replaces real HTTP with a testing backend. HttpTestingController lets you expect specific requests, assert method/URL/headers, and flush mock responses, ensuring no unexpected requests remain after the test."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you mock a service in Angular unit tests?",
+    "answer": "Provide a mock in TestBed: providers: [{ provide: RealService, useValue: mock }]. For partial mocks use jasmine.createSpyObj or jest.fn(). Alternatively, use useClass with a lightweight fake class."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is ComponentFixture and why is it important?",
+    "answer": "ComponentFixture wraps the created component instance and its native DOM. It provides detectChanges() to trigger change detection, debugElement for querying, and utilities to interact with the component template in tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "When should you use fakeAsync/tick vs waitForAsync?",
+    "answer": "Use fakeAsync/tick to control microtasks/macrotasks synchronously (e.g., timers, promises) and precisely advance time. Use waitForAsync when you want Angular to resolve async operations automatically and then continue assertions in a then/callback."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test components that use Angular signals?",
+    "answer": "Update the signal value directly in the test (e.g., count.set(5)), call fixture.detectChanges(), and assert the DOM. For computed signals, set dependencies and verify recomputation. Avoid flushing zones unless async work is present."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test an Angular pipe?",
+    "answer": "Instantiate the pipe class directly and call transform() with inputs, or declare the pipe in TestBed and use it within a host component template to verify integration."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test route guards?",
+    "answer": "Use RouterTestingModule and provide the guard. Create mocks for dependencies like AuthService. Call canActivate/canMatch directly with a mocked ActivatedRouteSnapshot/RouterStateSnapshot and assert returned boolean/UrlTree/observable."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test HTTP interceptors?",
+    "answer": "Provide the interceptor using HTTP_INTERCEPTORS in TestBed along with HttpClientTestingModule. Make a request via HttpClient, expect it with HttpTestingController, verify the interceptor’s header/URL/logic effects, and flush the response."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test routing with standalone components and lazy loading?",
+    "answer": "Use RouterTestingModule.withRoutes([...]) pointing to standalone components. Create the router via TestBed.inject(Router), initialize navigation with router.navigateByUrl('/path'), then fixture.detectChanges() and assert the rendered component."
+  },
+  {
+    "topic": "Angular",
+    "question": "What strategies help make Angular code more testable?",
+    "answer": "Isolate logic into services, use DI for external dependencies, keep components presentational where possible, avoid side effects in constructors, and prefer signals/inputs/outputs over hidden state. Write small, focused units."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test Output event emitters?",
+    "answer": "Subscribe to the EventEmitter or spy on emit, trigger the UI action, call fixture.detectChanges(), and assert that emit was called with the expected payload."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test forms (Reactive Forms)?",
+    "answer": "Initialize the form in the test, set control values programmatically, trigger valueChanges if needed, and assert form.valid/errors. Interact with inputs via the template and dispatch input events to simulate user behavior."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you stub ActivatedRoute data and params?",
+    "answer": "Provide ActivatedRoute with a custom object: { provide: ActivatedRoute, useValue: { paramMap: of(convertToParamMap({...})), snapshot: { data: {...} }, data: of({...}) } } and update observables as needed during tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is Angular Testing Library and when would you use it?",
+    "answer": "Angular Testing Library encourages tests focused on user interactions and accessible queries (getByRole, getByLabelText). Use it to reduce coupling to implementation details and improve test resilience."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test DOM queries effectively without brittle selectors?",
+    "answer": "Prefer accessible queries (role, label, placeholder, text). Use data-testid only when necessary. Avoid deep CSS selectors tied to layout. Assert on visible text and roles to mimic user perspective."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test error handling in services using HttpClient?",
+    "answer": "Expect the request and flush with an error: req.flush({ message: 'fail' }, { status: 500, statusText: 'Server Error' }); then assert your service maps or rethrows errors as designed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you set up Jest instead of Jasmine/Karma for Angular unit tests?",
+    "answer": "Use a Jest preset (e.g., preset Angular builders) or configure ts-jest/swc. Update test scripts, add jest.config, and swap TestBed test patterns as-is. Ensure zone.js test support and polyfills are loaded if needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a directive that manipulates host element behavior?",
+    "answer": "Create a host test component applying the directive, render with TestBed, interact with the host element, and assert attribute/class/style changes or event handling."
+  },
+  {
+    "topic": "Angular",
+    "question": "What is the role of TestHarnesses (Angular CDK) and when should you use them?",
+    "answer": "Harnesses provide stable APIs to interact with Angular Material/CDK components in tests, shielding you from DOM structure changes. Use them for robust, maintainable component tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test an async initialization path (e.g., data loaded in ngOnInit)?",
+    "answer": "Mock the async dependency (service returning observable/promise), trigger ngOnInit via fixture.detectChanges(), flush microtasks (fakeAsync/tick or waitForAsync), then assert DOM updates."
+  },
+  {
+    "topic": "Angular",
+    "question": "What are good patterns for testing components that consume signals derived from HTTP data?",
+    "answer": "Mock the service to emit test data, set the backing signal or flush the HTTP request, call fixture.detectChanges(), and assert the computed signal’s output in the template. Verify update paths by changing the source signal and reasserting."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you structure e2e tests with Playwright for an Angular app?",
+    "answer": "Use page object helpers for key flows, rely on accessible selectors, mock network calls where appropriate, run tests headless in CI, and gate merges with smoke e2e covering auth, navigation, and critical CRUD paths."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you handle flaky tests in Angular projects?",
+    "answer": "Remove unnecessary async waits, rely on deterministic selectors, mock non-deterministic services (timers/network), avoid race conditions by awaiting UI stabilization, and minimize global state shared across tests."
+  },
+  {
+    "topic": "Angular",
+    "question": "How can you test performance-sensitive components?",
+    "answer": "Write micro-benchmarks for heavy functions, prefer signal-driven updates for minimal change detection, and create tests that simulate large datasets while asserting render counts or using spies on expensive methods."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a component that uses the RouterLink and RouterOutlet?",
+    "answer": "Import RouterTestingModule, declare routes mapping to test components, render the component, click links with user-like events, call fixture.detectChanges(), and assert the new component appears via the outlet."
+  },
+  {
+    "topic": "Angular",
+    "question": "What considerations apply to testing server-side rendering (SSR) behaviors?",
+    "answer": "Avoid direct window/document access in components; abstract them via injection tokens. In tests, mock platform checks and verify code paths don’t rely on browser-only APIs to ensure SSR safety."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you stub environment configuration values in tests?",
+    "answer": "Use DI tokens for configuration and provide different values in TestBed. For code importing environment directly, refactor to inject a config token so tests can supply overrides cleanly."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test a component that uses Content Projection (ng-content)?",
+    "answer": "Create a host test component that projects desired test content into the component under test, then assert that the projected content renders and interacts as expected."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you test components that use OnPush change detection?",
+    "answer": "Trigger change detection deliberately after input/signal changes (fixture.detectChanges()). For inputs, set component.input = value; for signals, set them and then detect changes. Ensure tests update references rather than mutating in place when needed."
+  },
+  {
+    "topic": "Angular",
+    "question": "How do you verify no unexpected HTTP calls remain during a test?",
+    "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
+  },
+  {
+    "topic": "Interview",
+    "question": "Tell me about a time when you identified a gap in test coverage and implemented a solution.",
+    "answer": "S (Situation): At Net Health, our healthcare application had strong unit test coverage but limited end-to-end automation for critical patient workflows. This created risk around compliance-related features. \n T (Task): I needed to strengthen coverage to ensure we could catch regression defects in workflows critical to patient safety and HIPAA compliance. \n A (Action): I built end-to-end automation using SpecFlow, Selenium, and C#, focusing on high-priority user journeys. I collaborated with product managers to review acceptance criteria and worked with developers to identify high-risk areas.\n R (Result): Test coverage increased significantly, and we caught multiple regression issues before production. This reduced post-release defects by ~30% and improved stakeholder confidence in release quality."
+  },
+  {
+    "topic": "Interview",
+    "question": "Suppose a test in your Playwright framework passes locally but fails consistently in CI. How would you troubleshoot it?",
+    "answer": "S: While working on a TypeScript Playwright framework, we had tests that passed locally but failed intermittently in AWS CodePipeline. \nT: My responsibility was to stabilize these tests and ensure reliable CI results. \nA: I reviewed CI logs and realized environment timing was different than local runs. I added explicit waits and better locators, containerized the tests using Docker, and introduced retries only for known flaky network calls. I also added debug screenshots/videos in Playwright to diagnose future failures. \nR: The CI pipeline stabilized, with test flakiness dropping by 70%. Developers trusted automation more, and the release cycle became smoother."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you give an example of mentoring junior QA Engineers—what approach did you take?",
+    "answer": "S: At Net Health, I was part of a growing QA automation team that included junior engineers new to automation.\nT: I was asked to provide guidance to help them adopt best practices and become productive faster.\nA: I conducted hands-on training sessions where I walked through writing tests in SpecFlow and Selenium, explained framework design principles, and set up pair-programming sessions. I also created documentation of automation best practices and code review guidelines.\nR: Within 3 months, junior engineers were contributing independently, reducing onboarding time by ~40%. The overall quality of our automation code improved, and team velocity increased."
+  },
+  {
+    "topic": "Interview",
+    "question": "You’re running regression tests across multiple browsers, and a feature works in Chrome but fails in Safari. How do you approach this?",
+    "answer": "S: During BrowserStack testing, we discovered a UI feature that passed in Chrome but consistently failed in Safari.\nT: My goal was to identify whether this was a true application bug or a test/environment issue.\nA: I compared browser-specific behavior manually, inspected browser console logs, and validated the DOM rendering differences. I collaborated with developers, providing test evidence and pinpointing Safari-specific CSS handling as the root cause.\nR: The dev team fixed the issue before release. By documenting the scenario, we later expanded cross-browser regression coverage, reducing browser-specific defects by 25%."
+  },
+  {
+    "topic": "Interview",
+    "question": "Describe a situation where you had to push back on developers or product managers regarding release readiness.",
+    "answer": "S: In one sprint, performance testing with K6 revealed that the system slowed significantly when handling concurrent requests, beyond SLA limits.\nT: The product team wanted to move forward with the release, but I believed it would impact customers in production.\nA: I presented the performance metrics, demonstrated the bottleneck under simulated load, and explained the risks in terms of user experience. I suggested holding the release until developers optimized the API endpoints and database queries.\nR: The team agreed to delay the release by one sprint. After fixes, load handling improved by 50%, and the release was successful with no customer complaints."
+  },
+  {
+    "topic": "Interview",
+    "question": "You built a TypeScript Playwright automation framework—can you walk me through its architecture and how you ensured scalability and maintainability?",
+    "answer": "Situation: At SchoolStatus, we needed a scalable UI test framework to handle fast-growing product features.\nTask: My goal was to build a framework that supported maintainability, reusability, and clear reporting while scaling with multiple contributors.\nAction: I designed the framework in TypeScript using Playwright, organizing it with page object models, reusable utilities, and clear separation of test data. I integrated CI/CD (AWS CodeBuild/CodePipeline) and containerized it with Docker for consistent environments. Code quality was enforced with ESLint, Prettier, and Husky.\nResult: UI automation coverage increased by 80%+, onboarding new engineers became seamless, and tests provided fast, reliable feedback with minimal flakiness."
+  },
+  {
+    "topic": "Interview",
+    "question": "How do you decide when to automate a UI test versus an API test?",
+    "answer": "Situation: Across multiple projects, we had to balance test pyramid principles with business needs.\nTask: I needed to create a testing strategy that optimized coverage without introducing fragility.\nAction: I automated at the API level for data validations, business logic, and backend workflows—fast and stable. UI automation was reserved for critical user journeys and visual interactions where API alone couldn’t validate functionality. I documented guidelines for when to choose UI vs API automation.\nResult: This reduced reliance on slow UI tests, increased stability of regression runs, and accelerated delivery timelines while ensuring end-to-end coverage."
+  },
+  {
+    "topic": "Interview",
+    "question": "You mentioned integrating database validations in your API framework—how did you structure those validations with Postgres?",
+    "answer": "Situation: At SchoolStatus, API tests often required backend data checks.\nTask: I needed to ensure API calls reflected accurate database states.\nAction: I extended the API test framework (Jest, Mocha, SuperTest) with a Postgres client. Each test included DB validation utilities to query expected records after API execution. Queries were parameterized and wrapped in reusable helper functions.\nResult: This caught data integrity issues early, ensuring end-to-end validation between API responses and persisted data, which improved confidence in releases."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you compare Jest, Mocha, and SuperTest in terms of strengths and weaknesses for API testing?",
+    "answer": "Situation: I used all three in building SchoolStatus’s API test framework.\nTask: I needed to choose the right tools per scenario.\nAction:\n- Jest: Great for speed, built-in assertions, snapshot testing.\n- Mocha: More flexible/customizable, works well for complex asynchronous flows but requires extra setup (e.g., Chai).\n- SuperTest: Best for HTTP assertions and chaining requests; integrates seamlessly with either Jest or Mocha.\nResult: By combining Jest (simplicity), Mocha (flexibility), and SuperTest (HTTP testing), we created a comprehensive API framework covering multiple use cases."
+  },
+  {
+    "topic": "Interview",
+    "question": "How did you ensure cross-platform consistency when testing mobile apps on BrowserStack?",
+    "answer": "Situation: At SchoolStatus, we supported both iOS and Android apps.\nTask: I needed to validate that core user journeys behaved consistently across platforms.\nAction: I used BrowserStack for mobile automation, parameterizing device/OS configurations. I implemented parallel test execution and grouped test cases by functionality to verify platform parity. Reports included device-specific breakdowns.\nResult: This prevented platform-specific regressions, ensured consistent user experiences, and gave product managers confidence in multi-platform releases."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you explain how you used K6 for performance testing? What key metrics did you track?",
+    "answer": "Situation: The product needed pre-production performance validation.\nTask: I had to design repeatable performance tests.\nAction: I wrote K6 scripts simulating concurrent API loads. Key metrics tracked: response time (p95/p99), error rate, throughput (RPS), and system resource utilization under load. Test thresholds were defined to fail builds automatically if SLAs weren’t met.\nResult: This identified bottlenecks early, enabling fixes before production. As a result, production incidents related to load dropped significantly."
+  },
+  {
+    "topic": "Interview",
+    "question": "How did you leverage Docker for automation testing, and what challenges did you face in containerizing tests?",
+    "answer": "Situation: Local vs. CI environments caused inconsistencies in test execution.\nTask: I wanted to standardize execution.\nAction: I containerized the test frameworks (Playwright, API) using Docker, embedding all dependencies. Challenges included handling browser dependencies in Playwright and networking between containers. I resolved these with multi-stage builds and Docker Compose.\nResult: The same tests ran identically across local, CI, and staging environments, improving consistency and reducing environment-related failures."
+  },
+  {
+    "topic": "Interview",
+    "question": "Walk me through your AWS CodeBuild/CodePipeline setup for running automation—how did you ensure fast and reliable feedback loops?",
+    "answer": "Situation: The team needed fast feedback on every commit.\nTask: I was responsible for integrating automation into CI/CD pipelines.\nAction: I configured CodeBuild to run containerized tests in parallel stages (UI, API, performance). CodePipeline was set to trigger these runs on code check-in. Artifacts and reports were pushed to S3 for visibility. Retry and failure notifications were built into Slack.\nResult: This cut regression cycle times significantly and allowed developers to get feedback within minutes of pushing code."
+  },
+  {
+    "topic": "Interview",
+    "question": "You integrated ESLint, Prettier, and Husky—how do these tools improve test automation quality in practice?",
+    "answer": "Situation: With multiple contributors, coding styles varied.\nTask: I needed to enforce consistency.\nAction:\n- ESLint caught common code smells and anti-patterns.\n- Prettier ensured consistent formatting.\n- Husky enforced pre-commit hooks so code couldn’t be pushed without passing lint/format rules.\nResult: This reduced review overhead, kept the test codebase clean and uniform, and prevented style-related PR debates."
+  },
+  {
+    "topic": "Interview",
+    "question": "What are the key differences between building an automation framework in TypeScript/JavaScript vs. C# with SpecFlow and Selenium?",
+    "answer": "Situation: I’ve built frameworks in both ecosystems.\nTask: I often compared their strengths for different contexts.\nAction:\n- TypeScript/JavaScript (Playwright): Lightweight, modern async/await handling, faster execution, strong ecosystem for web-first testing.\n- C#/SpecFlow/Selenium: Strong for enterprise-level BDD, rich integrations with .NET apps, but more verbose and slower compared to Playwright.\nResult: I leveraged TypeScript for speed and maintainability in modern web apps, while using C#/SpecFlow when enterprise integration and compliance-heavy workflows were required."
+  },
+  {
+    "topic": "Interview",
+    "question": "How do you debug flaky automation tests in CI/CD pipelines?",
+    "answer": "Situation: Flakiness was an issue in large regression runs.\nTask: I needed a repeatable debugging process.\nAction: I used CI logs, Playwright trace viewer, and reruns to isolate failures. Common causes were timing issues, network instability, and test data collisions. I added retries with exponential backoff and improved wait strategies. Flaky tests were flagged in dashboards for prioritization.\nResult: Flakiness dropped dramatically, increasing confidence in automation as a reliable gate in the CI/CD pipeline."
+  },
+  {
+    "topic": "Interview",
+    "question": "What are some best practices you documented for writing reliable automation test scripts?",
+    "answer": "Situation: To maintain consistency, I created best practice documentation.\nTask: My goal was to standardize automation approaches.\nAction: I documented guidelines such as:\n- Use page objects and utilities for reusability.\n- Prefer API validations over UI when possible.\n- Implement meaningful assertions (not just presence checks).\n- Keep tests independent and data-driven.\n- Enforce consistent coding style with linting/formatting.\nResult: New engineers onboarded quickly, scripts became more maintainable, and test reliability improved across teams."
+  }
+]
