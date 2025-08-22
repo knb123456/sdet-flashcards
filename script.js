@@ -107,7 +107,9 @@ function showCard(index) {
   const card = filteredCards[currentCardIndex];
 
   document.getElementById('question').textContent = card.question;
-  document.getElementById('answer').textContent = card.answer;
+  // Convert \n into line breaks
+  const formattedAnswer = card.answer.replace(/\n/g, '<br>');
+  document.getElementById('answer').innerHTML = formattedAnswer;
   document.getElementById('answer').style.display = 'none';
 }
 
