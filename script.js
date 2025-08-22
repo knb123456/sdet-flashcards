@@ -4,24 +4,9 @@ const jsonUrl = 'flashcards.json'; // Adjust if your file is in a subfolder
 let flashcards = [];
 let currentCardIndex = 0;
 let currentTopic = 'All';
+let topicsInitialized = false; // prevent duplicate listeners
 
-// Load flashcards on page load
-document.addEventListener('DOMContentLoaded', () => {
-  fetch(jsonUrl)
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to load flashcards.');
-      return response.json();
-    })
-    .then(data => {
-      flashcards = data;
-      populateTopics();
-      showCard(0);
-    })
-    .catch(err => {
-      alert('Error: ' + err.message);
-    });
-});
-
+// Toggle filter panel
 document.getElementById("filterToggleBtn").addEventListener("click", () => {
   const filterContainer = document.getElementById("filterContainer");
   filterContainer.style.display =
@@ -30,9 +15,21 @@ document.getElementById("filterToggleBtn").addEventListener("click", () => {
       : "none";
 });
 
+// Shuffle helper (randomize once on load)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 function populateTopics() {
   const container = document.getElementById('topicCheckboxes');
+
+  // Clear previous contents to avoid duplicates
+  container.innerHTML = '';
+
   const topics = [...new Set(flashcards.map(card => card.topic))].sort();
 
   // Add "All Topics" checkbox
@@ -55,8 +52,10 @@ function populateTopics() {
     checkbox.type = 'checkbox';
     checkbox.value = topic;
     checkbox.className = 'topicCheckbox';
+    checkbox.id = `topic-${topic}`;
 
     const label = document.createElement('label');
+    label.htmlFor = `topic-${topic}`;
     label.textContent = topic;
 
     container.appendChild(checkbox);
@@ -64,28 +63,32 @@ function populateTopics() {
     container.appendChild(document.createElement('br'));
   });
 
-  container.addEventListener('change', (e) => {
-    const target = e.target;
-  
-    if (target.id === 'allTopics') {
-      // If "All Topics" is checked, uncheck all individual topics
-      if (target.checked) {
-        document.querySelectorAll('.topicCheckbox').forEach(cb => cb.checked = false);
+  // Attach the change listener only once
+  if (!topicsInitialized) {
+    container.addEventListener('change', (e) => {
+      const target = e.target;
+
+      if (target.id === 'allTopics') {
+        // If "All Topics" is checked, uncheck all individual topics
+        if (target.checked) {
+          document.querySelectorAll('.topicCheckbox').forEach(cb => cb.checked = false);
+        }
+      } else {
+        // If any topic checkbox is checked, uncheck "All Topics"
+        const anyChecked = Array.from(document.querySelectorAll('.topicCheckbox'))
+          .some(cb => cb.checked);
+        document.getElementById('allTopics').checked = !anyChecked;
       }
-    } else {
-      // If any topic checkbox is checked, uncheck "All Topics"
-      document.getElementById('allTopics').checked = false;
-    }
-  
-    currentCardIndex = 0;
-    showCard(0);
-  });
-  
+
+      currentCardIndex = 0;
+      showCard(0);
+    });
+    topicsInitialized = true;
+  }
 }
 
 function getFilteredFlashcards() {
   const allChecked = document.getElementById('allTopics').checked;
-
   if (allChecked) return flashcards;
 
   const selectedTopics = Array.from(document.querySelectorAll('.topicCheckbox:checked'))
@@ -125,4 +128,21 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 // Show answer
 document.getElementById('showAnswerBtn').addEventListener('click', () => {
   document.getElementById('answer').style.display = 'block';
+});
+
+// Load flashcards on page load (single block)
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(jsonUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load flashcards.');
+      return response.json();
+    })
+    .then(data => {
+      flashcards = shuffle(data); // 🔀 randomize once
+      populateTopics();
+      showCard(0);
+    })
+    .catch(err => {
+      alert('Error: ' + err.message);
+    });
 });
