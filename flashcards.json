@@ -948,5 +948,15 @@
       "topic": "Angular",
       "question": "How do you verify no unexpected HTTP calls remain during a test?",
       "answer": "After assertions, call httpTestingController.verify() to ensure all expected requests were matched and flushed, preventing leaks that could affect other tests."
+    },
+    {
+      "topic": "Interview",
+      "question": "Tell me about a time when you identified a gap in test coverage and implemented a solution.",
+      "answer": "S (Situation): At Net Health, our healthcare application had strong unit test coverage but limited end-to-end automation for critical patient workflows. This created risk around compliance-related features. \n T (Task): I needed to strengthen coverage to ensure we could catch regression defects in workflows critical to patient safety and HIPAA compliance. \n A (Action): I built end-to-end automation using SpecFlow, Selenium, and C#, focusing on high-priority user journeys. I collaborated with product managers to review acceptance criteria and worked with developers to identify high-risk areas.\n R (Result): Test coverage increased significantly, and we caught multiple regression issues before production. This reduced post-release defects by ~30% and improved stakeholder confidence in release quality."
+    },
+    {
+      "topic": "Interview",
+      "question": "Suppose a test in your Playwright framework passes locally but fails consistently in CI. How would you troubleshoot it?",
+      "answer": "S: While working on a TypeScript Playwright framework, we had tests that passed locally but failed intermittently in AWS CodePipeline. \nT: My responsibility was to stabilize these tests and ensure reliable CI results. \nA: I reviewed CI logs and realized environment timing was different than local runs. I added explicit waits and better locators, containerized the tests using Docker, and introduced retries only for known flaky network calls. I also added debug screenshots/videos in Playwright to diagnose future failures. \nR: The CI pipeline stabilized, with test flakiness dropping by 70%. Developers trusted automation more, and the release cycle became smoother."
     }
   ]
