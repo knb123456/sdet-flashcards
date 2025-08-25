@@ -992,7 +992,7 @@
   {
     "topic": "Interview",
     "question": "Can you compare Jest, Mocha, and SuperTest in terms of strengths and weaknesses for API testing?",
-    "answer": "All three were used in building SchoolStatus’s API test framework.\nJest: Great for speed, built-in assertions\n- Mocha: More flexible/customizable, works well for complex asynchronous flows but requires extra setup (e.g., Chai).\n- SuperTest: Best for HTTP assertions and chaining requests; integrates seamlessly with either Jest or Mocha.\nResult: By combining Jest (simplicity), Mocha (flexibility), and SuperTest (HTTP testing), we created a comprehensive API framework covering multiple use cases."
+    "answer": "All three were used in building SchoolStatus’s API test framework.\nJest: Great for speed, built-in assertions\n- Mocha: Test Runner, works well for complex asynchronous flows, you usually add Chai (assertions).\n- SuperTest: Library to test HTTP servers; integrates seamlessly with either Jest or Mocha.\nResult: By combining Jest (simplicity), Mocha (flexibility), and SuperTest (HTTP testing), we created a comprehensive API framework covering multiple use cases."
   },
   {
     "topic": "Interview",
@@ -1033,5 +1033,16 @@
     "topic": "Interview",
     "question": "What are some best practices you documented for writing reliable automation test scripts?",
     "answer": "I documented guidelines such as:\nUse page objects and utilities for reusability.\nAPI validations over UI when possible.\nImplement meaningful assertions\n- Keep tests independent and data-driven.\nEnforce consistent coding style with linting/formatting.\nAs a resule scripts became more maintainable, and test reliability improved across teams."
+  },
+  {
+    "topic": "Interview",
+    "question": "What is the difference between jasmine and jest",
+    "answer": "Jasmine is a behavior-driven testing framework for JavaScript. It comes with its own assertion library and test runner. It includes a test runner, assertion library, mocking utilities, and snapshot testing out of the box. Jasmine is more bare-bones (you often need extra setup), while Jest is more modern and batteries-included, especially if you’re working with React or TypeScript."
+  },
+  {
+    "topic": "Interview-Node",
+    "question": "What is NodeJS and what is it used for",
+    "answer": "Node.js – A runtime environment that lets you run JavaScript outside the browser, often used to build fast, scalable web servers and APIs."
   }
+
 ]
