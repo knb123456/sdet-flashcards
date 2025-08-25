@@ -32,11 +32,11 @@ function populateTopics() {
 
   const topics = [...new Set(flashcards.map(card => card.topic))].sort();
 
-  // Add "All Topics" checkbox
+  // Add "All Topics" checkbox (start unchecked now)
   const allCheckbox = document.createElement('input');
   allCheckbox.type = 'checkbox';
   allCheckbox.id = 'allTopics';
-  allCheckbox.checked = true;
+  allCheckbox.checked = false; // 👈 don't auto-select All
 
   const allLabel = document.createElement('label');
   allLabel.htmlFor = 'allTopics';
@@ -63,18 +63,25 @@ function populateTopics() {
     container.appendChild(document.createElement('br'));
   });
 
+  // ✅ Default Interview topic selected
+  const interviewCheckbox = document.getElementById('topic-Interview');
+  if (interviewCheckbox) {
+    interviewCheckbox.checked = true;
+  } else {
+    // Fallback: if no Interview topic exists, keep All Topics checked
+    allCheckbox.checked = true;
+  }
+
   // Attach the change listener only once
   if (!topicsInitialized) {
     container.addEventListener('change', (e) => {
       const target = e.target;
 
       if (target.id === 'allTopics') {
-        // If "All Topics" is checked, uncheck all individual topics
         if (target.checked) {
           document.querySelectorAll('.topicCheckbox').forEach(cb => cb.checked = false);
         }
       } else {
-        // If any topic checkbox is checked, uncheck "All Topics"
         const anyChecked = Array.from(document.querySelectorAll('.topicCheckbox'))
           .some(cb => cb.checked);
         document.getElementById('allTopics').checked = !anyChecked;
