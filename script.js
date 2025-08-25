@@ -63,14 +63,22 @@ function populateTopics() {
     container.appendChild(document.createElement('br'));
   });
 
-  // ✅ Default Interview topic selected
-  const interviewCheckbox = document.getElementById('topic-Interview');
-  if (interviewCheckbox) {
-    interviewCheckbox.checked = true;
-  } else {
-    // Fallback: if no Interview topic exists, keep All Topics checked
-    allCheckbox.checked = true;
+// ✅ Default selected topics
+const defaultTopics = ['Interview', 'Interview-Node'];
+
+let matched = false;
+defaultTopics.forEach(topic => {
+  const cb = document.getElementById(`topic-${topic}`);
+  if (cb) {
+    cb.checked = true;
+    matched = true;
   }
+});
+
+// Fallback: if none of the defaults exist, keep All Topics checked
+if (!matched) {
+  allCheckbox.checked = true;
+}
 
   // Attach the change listener only once
   if (!topicsInitialized) {
