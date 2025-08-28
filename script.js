@@ -64,7 +64,7 @@ function populateTopics() {
   });
 
 // ✅ Default selected topics
-const defaultTopics = ['Interview', 'Interview-Node'];
+const defaultTopics = ['JavaScript', 'TypeScript', 'Playwright-TS'];
 
 let matched = false;
 defaultTopics.forEach(topic => {
