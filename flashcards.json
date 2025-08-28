@@ -1,5 +1,100 @@
 [
   {
+    "topic": "Interview",
+    "question": "Tell me about a time when you identified a gap in test coverage and implemented a solution.",
+    "answer": "At Net Health, our healthcare application had strong unit test coverage but limited end-to-end automation for critical patient workflows. This created risk around compliance-related features. \nI needed to strengthen coverage to ensure we could catch regression defects in workflows critical to patient safety and HIPAA compliance. I built end-to-end automation using SpecFlow, Selenium, and C#, focusing on high-priority user journeys. I collaborated with product managers to review acceptance criteria and worked with developers to identify high-risk areas.\n Test coverage increased significantly, and we caught multiple regression issues before production. This reduced post-release defects by ~30% and improved confidence in release quality."
+  },
+  {
+    "topic": "Interview",
+    "question": "Suppose a test in your Playwright framework passes locally but fails consistently in CI. How would you troubleshoot it?",
+    "answer": "While working with Playwright, we had tests that passed locally but failed intermittently in AWS CodePipeline. \nI reviewed CI logs and realized environment timing was different than local runs. I added additional waits and better locators, containerized the tests using Docker, and introduced retries only for known flaky network calls. I also added debug screenshots/videos in Playwright to diagnose future failures. \nCI pipeline stabilized and test flakiness dropping by 70%. Developers trusted automation more, and the release cycle became smoother."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you give an example of mentoring junior QA Engineers—what approach did you take?",
+    "answer": "At SchoolStatus, I was part of a new QA team that included QAs new to automation.\nI conducted hands-on training sessions where I walked through writing tests in typescript and playwright, explained how the framework was design. I also created documentation of automation best practices, implemented linting to catch code smells, prettier and added PR reviews.\nWithin 3 months, QAs were contributing independently"
+  },
+  {
+    "topic": "Interview",
+    "question": "You’re running regression tests across multiple browsers, and a feature works in Chrome but fails in Safari. How do you approach this?",
+    "answer": "During BrowserStack testing, we discovered a UI feature that passed in Chrome but consistently failed in Safari.\nT: My goal was to identify whether this was a true application bug or a test/environment issue.\nA: I compared browser-specific behavior manually, inspected browser console logs, and validated the DOM rendering differences. I collaborated with developers, providing test evidence and pinpointing Safari-specific CSS handling as the root cause.\nR: The dev team fixed the issue and we expanded cross-browser regression coverage, reducing browser-specific defects by 25%."
+  },
+  {
+    "topic": "Interview",
+    "question": "Describe a situation where you had to push back on developers or product managers regarding release readiness.",
+    "answer": "At SchoolStatus, in one sprint, performance testing with K6 revealed that the system slowed significantly when handling concurrent requests, beyond SLA limits.\nProduct team wanted to move forward with the release, but I believed it would impact customers in production.\nA: I presented the performance metrics, demonstrated the bottleneck under simulated load, and explained the risks in terms of user experience. I suggested holding the release until developers optimized the API endpoints and database queries.\nR: The team agreed to delay the release by one sprint. After fixes, load handling improved by 50%, and the release was successful with no customer complaints."
+  },
+  {
+    "topic": "Interview",
+    "question": "You built a TypeScript Playwright automation framework—can you walk me through its architecture and how you ensured scalability and maintainability?",
+    "answer": "At SchoolStatus, we needed a scalable UI test framework to handle fast-growing product features.\nMy goal was to build a framework that supported maintainability, reusability, and reporting while being able to scale.\nI designed the framework in TypeScript using Playwright, organizing it with page object models, reusable utilities, and clear separation of test data. I integrated CI/CD (Github actions, AWS CodeBuild/CodePipeline) and containerized it with Docker for consistent environments. Code quality was enforced with ESLint, Prettier, and Husky.\nUI automation coverage increased by 80%+, onboarding new clients became seamless, and tests provided fast, reliable feedback with minimal flakiness."
+  },
+  {
+    "topic": "Interview",
+    "question": "How do you decide when to automate a UI test versus an API test?",
+    "answer": "I automated at the API level for data validations, business logic. UI automation was reserved for critical user journeys and visual interactions where API alone couldn’t validate functionality. This reduced reliance on slow UI tests, increased stability of regression runs, and accelerated delivery timelines while ensuring end-to-end coverage."
+  },
+  {
+    "topic": "Interview",
+    "question": "You mentioned integrating database validations in your API framework—how did you structure those validations with Postgres?",
+    "answer": "At SchoolStatus, API tests often required backend data checks.\nTask: I needed to ensure API calls reflected accurate database states.\n I extended the API test frameworkwith a Postgres client. Each test included DB validations to query records after API execution. This caught data integrity issues early, ensuring end-to-end validation between API responses which improved confidence in releases."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you compare Jest, Mocha, and SuperTest in terms of strengths and weaknesses for API testing?",
+    "answer": "All three were used in building SchoolStatus’s API test framework.\nJest: Great for speed, built-in assertions\n- Mocha: Test Runner, works well for complex asynchronous flows, you usually add Chai (assertions).\n- SuperTest: Library to test HTTP servers; integrates seamlessly with either Jest or Mocha.\nResult: By combining Jest (simplicity), Mocha (flexibility), and SuperTest (HTTP testing), we created a comprehensive API framework covering multiple use cases."
+  },
+  {
+    "topic": "Interview",
+    "question": "How did you ensure cross-platform consistency when testing mobile apps on BrowserStack?",
+    "answer": "At SchoolStatus, we supported both iOS and Android apps.\nTask: I needed to validate that core user journeys behaved consistently across platforms.\nUsed BrowserStack for mobile automation, parameterizing device/OS configurations. I implemented parallel test execution and grouped test cases by functionality to verify platform parity. Reports included device-specific breakdowns.\nThis prevented platform-specific regressions, ensured consistent user experiences, and gave product managers confidence in multi-platform releases."
+  },
+  {
+    "topic": "Interview",
+    "question": "Can you explain how you used K6 for performance testing? What key metrics did you track?",
+    "answer": "Situation: The product needed pre-production performance validation.\nI wrote K6 scripts simulating concurrent API loads. Key metrics tracked: response time (p95/p99), error rate, throughput (RPS), and system resource utilization under load. This identified bottlenecks early, enabling fixes before production. As a result, production incidents related to load dropped significantly."
+  },
+  {
+    "topic": "Interview",
+    "question": "How did you leverage Docker for automation testing, and what challenges did you face in containerizing tests?",
+    "answer": "Local vs. CI environments caused inconsistencies in test execution.\nI containerized the test frameworks (Playwright, API) using Docker Playwright, embedding all dependencies. Challenges included handling browser dependencies in Playwright and networking between containers. I resolved these with multi-stage builds and Docker Compose.\nThe same tests ran identically across local, CI, and staging environments, improving consistency and reducing environment-related failures."
+  },
+  {
+    "topic": "Interview",
+    "question": "Walk me through your AWS CodeBuild/CodePipeline setup for running automation—how did you ensure fast and reliable feedback loops?",
+    "answer": "CodePipeline was set to trigger runs on code check-in. Artifacts and reports were pushed to S3 for visibility. Retry and failure notifications were built into Slack.\nThis cut regression cycle times significantly and allowed developers to get feedback within minutes of pushing code."
+  },
+  {
+    "topic": "Interview",
+    "question": "You integrated ESLint, Prettier, and Husky—how do these tools improve test automation quality in practice?",
+    "answer": "With multiple contributors, coding styles varied.\nESLint caught common code smells and anti-patterns.\nPrettier ensured consistent formatting.\nHusky enforced pre-commit hooks so code couldn’t be pushed without passing lint/format rules.\nThis reduced review overhead, kept the test codebase clean and uniform, and prevented style-related PR debates."
+  },
+  {
+    "topic": "Interview",
+    "question": "What are the key differences between building an automation framework in TypeScript/JavaScript vs. C# with SpecFlow and Selenium?",
+    "answer": "I’ve built and worked with frameworks in both ecosystems.\nFor TypeScript/JavaScript (Playwright): Lightweight, faster execution, built in assertions, strong ecosystem for web-first testing.\nC#/SpecFlow/Selenium: Strong for enterprise-level BDD, integrations with .NET apps, but more verbose and slower compared to Playwright.\nI leveraged TypeScript for speed and maintainability in modern web apps, while using C#/SpecFlow when enterprise integration and compliance-heavy workflows were required."
+  },
+  {
+    "topic": "Interview",
+    "question": "How do you debug flaky automation tests in CI/CD pipelines?",
+    "answer": "Flakiness was an issue in large regression runs. I used CI logs, Playwright trace viewer, and reruns to isolate failures. Common causes were timing issues, network instability, and test data collisions. I added retries and improved wait strategies. Flaky tests were flagged in dashboards for prioritization.\nFlakiness dropped dramatically, increasing confidence in automation as a reliable gate in the CI/CD pipeline."
+  },
+  {
+    "topic": "Interview",
+    "question": "What are some best practices you documented for writing reliable automation test scripts?",
+    "answer": "I documented guidelines such as:\nUse page objects and utilities for reusability.\nAPI validations over UI when possible.\nImplement meaningful assertions\n- Keep tests independent and data-driven.\nEnforce consistent coding style with linting/formatting.\nAs a resule scripts became more maintainable, and test reliability improved across teams."
+  },
+  {
+    "topic": "Interview",
+    "question": "What is the difference between jasmine and jest",
+    "answer": "Jasmine is a behavior-driven testing framework for JavaScript. It comes with its own assertion library and test runner. It includes a test runner, assertion library, mocking utilities, and snapshot testing out of the box. Jasmine is more bare-bones (you often need extra setup), while Jest is more modern and batteries-included, especially if you’re working with React or TypeScript."
+  },
+  {
+    "topic": "Interview-Node",
+    "question": "What is NodeJS and what is it used for",
+    "answer": "Node.js – A runtime environment that lets you run JavaScript outside the browser, often used to build fast, scalable web servers and APIs."
+  },
+  {
     "topic": "Java",
     "question": "Explain the concept of multithreading in Java and why it is important in test automation.",
     "answer": "Multithreading allows concurrent execution thus improving efficiency. It can speed up test execution in automation."
