@@ -4,10 +4,27 @@ const jsonUrl = 'flashcards.json';
 let flashcards = [];
 let currentCardIndex = 0;
 
-document.getElementById("filterToggleBtn").addEventListener("click", () => {
-  const filter = document.getElementById("filterContainer");
-  filter.style.display = (filter.style.display === "none" || filter.style.display === "") ? "flex" : "none";
+const filterToggleBtn = document.getElementById("filterToggleBtn");
+const filterContainer = document.getElementById("filterContainer");
+const questionEl = document.getElementById("question");
+const answerEl = document.getElementById("answer");
+const controlsEl = document.querySelector(".controls"); // All 3 buttons are inside this
+
+filterToggleBtn.addEventListener("click", () => {
+  const isFilterVisible = filterContainer.style.display === "flex";
+
+  // Toggle filter container
+  filterContainer.style.display = isFilterVisible ? "none" : "flex";
+
+  // Toggle visibility of question, answer, and controls
+  questionEl.classList.toggle("hidden", !isFilterVisible);
+  answerEl.classList.toggle("hidden", !isFilterVisible);
+  controlsEl.classList.toggle("hidden", !isFilterVisible);
+
+  // Update button text
+  filterToggleBtn.innerText = isFilterVisible ? "Topics" : "Back to Questions";
 });
+
 
 // Shuffle helper (randomize once on load)
 function shuffle(array) {

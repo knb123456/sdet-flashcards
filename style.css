@@ -61,6 +61,23 @@ a:hover {
   border-radius: 4px;
 }
 
+.hidden {
+  display: none;
+}
+
+#filterToggleBtn {
+  margin-bottom: 1rem;
+}
+
+#question {
+  font-size: 1.5rem; /* or use px like 24px */
+  font-weight: bold;
+}
+
+#answer {
+  margin-bottom: 1rem;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
   .filter-container {
