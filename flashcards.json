@@ -270,6 +270,11 @@
     "answer": "Use `npx playwright test`"
   },
   {
+    "topic": "Playwright-test",
+    "question": "What command will click on an element that says 'Get started'?",
+    "answer": "`await page.getByRole('link', { name: 'Get started' }).click();`"
+  },
+  {
     "topic": "Playwright",
     "question": "How do you handle alerts or popups in Playwright?",
     "answer": "Use `page.on('dialog', callback)` to handle alerts/popups."
@@ -1046,8 +1051,8 @@
   },
   {
     "topic": "JavaScript",
-    "question": "JavaScript Question",
-    "answer": "JavaScript Answer"
+    "question": "In JavaScript, how do you declare and array with 2 values?",
+    "answer": "let defaultTopics = ['TypeScript', 'Playwright-TS'];"
   },
   {
     "topic": "TypeScript",

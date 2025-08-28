@@ -17,3 +17,9 @@ Thumbs.db
 
 #SQLite Database
 flashcards.db
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
