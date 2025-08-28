@@ -1046,17 +1046,17 @@
   },
   {
     "topic": "JavaScript",
-    "question": "JavaScript",
-    "answer": "JavaScript"
+    "question": "JavaScript Question",
+    "answer": "JavaScript Answer"
   },
   {
     "topic": "TypeScript",
-    "question": "TypeScript",
-    "answer": "TypeScript"
+    "question": "TypeScript Question",
+    "answer": "TypeScript Answer"
   },
   {
     "topic": "Playwright-TS",
-    "question": "Playwright-TS",
-    "answer": "Playwright-TS"
+    "question": "Playwright-TS Question",
+    "answer": "Playwright-TS Answer"
   }
 ]
