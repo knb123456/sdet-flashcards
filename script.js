@@ -53,7 +53,7 @@ function populateTopics() {
   });
 
   // Default checked topics
-  const defaultTopics = ['TypeScript', 'Playwright-TS'];
+  const defaultTopics = ['Playwright', 'Playwright-TS', 'Test Automation Frameworks'];
   let matched = false;
   defaultTopics.forEach(topic => {
     const cb = document.getElementById(`topic-${topic}`);
