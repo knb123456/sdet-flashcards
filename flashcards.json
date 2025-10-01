@@ -1063,5 +1063,131 @@
     "topic": "Playwright-TS",
     "question": "Playwright-TS Question",
     "answer": "Playwright-TS Answer"
-  }
+  },
+  {
+    "topic": "C#",
+    "question": "What is C#?",
+    "answer": "C# is a modern, object-oriented programming language developed by Microsoft as part of the .NET framework. It's widely used for building applications ranging from Windows desktop software to web services and mobile apps. It supports asynchronous programming, LINQ, garbage collection, and runs on multiple platforms."
+},
+{
+    "topic": "C#",
+    "question": "What are the key features of C#?",
+    "answer": "Object-oriented (focuses on objects and data), Type safety (ensures secure data operations), Interoperability (enables language integration), and Garbage Collection (manages memory automatically)."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between C# and .NET?",
+    "answer": "C# is a programming language, while .NET is a framework providing libraries, runtime environments, and tools for application development. The .NET framework supports multiple languages including C#."
+},
+{
+    "topic": "C#",
+    "question": "What is a namespace in C#?",
+    "answer": "A namespace organizes classes and other types into a hierarchical structure, preventing naming conflicts."
+},
+{
+    "topic": "C#",
+    "question": "Explain 'using' in C#.",
+    "answer": "The 'using' keyword has two purposes: (1) including namespaces for easier type access, and (2) managing resources by ensuring IDisposable objects are properly cleaned up."
+},
+{
+    "topic": "C#",
+    "question": "What is the purpose of the static keyword?",
+    "answer": "The 'static' keyword defines members that belong to the type itself rather than instances. Static members are shared across all instances and can be accessed without creating an object."
+},
+{
+    "topic": "C#",
+    "question": "What is a class in C#?",
+    "answer": "A class in C# is a blueprint for creating objects. It defines the properties and methods that its objects will have."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between a class and an object?",
+    "answer": "A class is a blueprint, while an object is an instance of a class. Objects hold actual data defined by the class."
+},
+{
+    "topic": "C#",
+    "question": "What are access modifiers in C#?",
+    "answer": "Access modifiers control visibility: public, private, protected, internal, protected internal, and private protected."
+},
+{
+    "topic": "C#",
+    "question": "What is inheritance in C#?",
+    "answer": "Inheritance allows a class to inherit properties and methods from another class, promoting code reusability. It uses the ':' syntax."
+},
+{
+    "topic": "C#",
+    "question": "What is polymorphism in C#?",
+    "answer": "Polymorphism allows methods to have different implementations depending on the context. It can be achieved through method overloading (compile-time) or method overriding (runtime)."
+},
+{
+    "topic": "C#",
+    "question": "What is encapsulation in C#?",
+    "answer": "Encapsulation hides the internal details of a class and exposes only necessary functionality through public methods and properties, improving security and maintainability."
+},
+{
+    "topic": "C#",
+    "question": "What is abstraction in C#?",
+    "answer": "Abstraction focuses on exposing only essential details while hiding implementation complexity, achieved using abstract classes or interfaces."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between an abstract class and an interface?",
+    "answer": "Abstract classes can contain implemented methods and fields, while interfaces only define contracts (methods, properties, events) with no implementation. A class can implement multiple interfaces but only inherit one abstract class."
+},
+{
+    "topic": "C#",
+    "question": "What are value types and reference types in C#?",
+    "answer": "Value types store data directly (e.g., int, bool, struct), while reference types store a reference to the data\u2019s memory location (e.g., class, object, string, arrays)."
+},
+{
+    "topic": "C#",
+    "question": "What is boxing and unboxing in C#?",
+    "answer": "Boxing converts a value type to an object (reference type), while unboxing extracts the value type from the object."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between stack and heap in C#?",
+    "answer": "Stack stores value types and method calls, while heap stores reference types and dynamically allocated memory. The garbage collector manages heap memory."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between ref and out keywords in C#?",
+    "answer": "Both allow passing arguments by reference. 'ref' requires the variable to be initialized before passing, while 'out' does not require initialization but must be assigned within the method."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between const and readonly in C#?",
+    "answer": "const values are compile-time constants and must be assigned at declaration. readonly fields can be assigned at declaration or in a constructor and are evaluated at runtime."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between == and Equals() in C#?",
+    "answer": "The '==' operator compares object references (for reference types) or values (for value types). Equals() can be overridden to define custom equality checks."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between an Array and ArrayList in C#?",
+    "answer": "Arrays have a fixed size and store elements of a single type, while ArrayLists are dynamic, can grow/shrink in size, and store elements of any type (though generics List<T> are preferred)."
+},
+{
+    "topic": "C#",
+    "question": "What are delegates in C#?",
+    "answer": "Delegates are type-safe pointers to methods, enabling callback functions and event handling. They support multicast invocation."
+},
+{
+    "topic": "C#",
+    "question": "What are events in C#?",
+    "answer": "Events are mechanisms for communication between objects, based on delegates. They allow a class to notify other classes when something occurs."
+},
+{
+    "topic": "C#",
+    "question": "What is LINQ in C#?",
+    "answer": "Language Integrated Query (LINQ) allows querying collections, databases, XML, and more using a uniform syntax directly within C#."
+},
+{
+    "topic": "C#",
+    "question": "What is the difference between IEnumerable and IQueryable in C#?",
+    "answer": "IEnumerable is used for in-memory collection iteration, while IQueryable executes queries against remote data sources like databases with deferred execution."
+}
+
 ]
