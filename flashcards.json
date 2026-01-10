@@ -1,5 +1,10 @@
 [
   {
+    "topic": "TEST",
+    "question": "TEST",
+    "answer": "TEST"
+  },
+  {
     "topic": "Interview",
     "question": "Tell me about a time when you identified a gap in test coverage and implemented a solution.",
     "answer": "At Net Health, our healthcare application had strong unit test coverage but limited end-to-end automation for critical patient workflows. This created risk around compliance-related features. \nI needed to strengthen coverage to ensure we could catch regression defects in workflows critical to patient safety and HIPAA compliance. I built end-to-end automation using SpecFlow, Selenium, and C#, focusing on high-priority user journeys. I collaborated with product managers to review acceptance criteria and worked with developers to identify high-risk areas.\n Test coverage increased significantly, and we caught multiple regression issues before production. This reduced post-release defects by ~30% and improved confidence in release quality."
