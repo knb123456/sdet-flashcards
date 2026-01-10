@@ -116,16 +116,19 @@ function showCard(index) {
 
   const questionEl = document.getElementById('question');
   const answerEl = document.getElementById('answer');
+  const topicEl = document.getElementById('topic'); // Get the topic element
 
   if (filtered.length === 0) {
     questionEl.textContent = 'No flashcards available.';
     answerEl.textContent = '';
+    topicEl.textContent = '';
     return;
   }
 
   currentCardIndex = (index + filtered.length) % filtered.length;
   const card = filtered[currentCardIndex];
 
+  topicEl.textContent = `[${card.topic}] `; // Show topic before question
   questionEl.textContent = card.question;
   answerEl.innerHTML = card.answer.replace(/\n/g, '<br>');
   answerEl.style.display = 'none';
