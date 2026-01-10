@@ -18,6 +18,8 @@ This is a **Flashcards Application** for studying Software Development Engineer 
 
 ## 🛠️ Setup & Deployment
 
+script.js - this is where you can set the default topic questions to be loaded when you open the page
+
 ### Local Development
 
 1️⃣ Clone the repo:
