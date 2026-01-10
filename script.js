@@ -53,7 +53,7 @@ function populateTopics() {
   });
 
   // Default checked topics
-  const defaultTopics = ['Playwright', 'Playwright-TS', 'Test Automation Frameworks'];
+  const defaultTopics = ['C#', 'Interview', 'Test Automation Frameworks', 'Other Miscellaneous Questions','Selenium'];
   let matched = false;
   defaultTopics.forEach(topic => {
     const cb = document.getElementById(`topic-${topic}`);
